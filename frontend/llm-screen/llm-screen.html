@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Summarization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="#" class="active">Summarize Report</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <header>
+            <h1>Report Summarization</h1>
+        </header>
+        <main>
+            <form id="textForm" enctype="multipart/form-data">
+                <label for="txtFile">Upload .txt File:</label>
+                <input type="file" id="txtFile" name="txtFile" accept=".txt">
+                <button type="submit">Summarize</button>
+            </form>
+            <div id="summary">
+                <!-- Summarized text will be displayed here -->
+                <!-- Eg-->
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
