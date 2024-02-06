@@ -1,0 +1,196 @@
+/* styles.css */
+
+
+/*-----------------------------------*\
+  #MAIN
+\*-----------------------------------*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222627;
+    color: #fefefe;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+header {
+    /*background-color: #222627;*/
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+}
+
+.subheading{
+    color: #474d4f;
+    text-align: left;
+}
+
+main {
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    color: #fefefe;
+    font-weight: bold;
+}
+
+input[type="file"] {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#summary {
+    border: 3px dotted #007bff;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/*-----------------------------------*\
+  # FILE MANAGER
+\*-----------------------------------*/
+
+.file-input{
+    display: none;
+}
+
+.file-list {
+    padding: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.file-item{
+    margin-bottom: 5px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding:5px;
+    border:2px dashed #fff;
+    border-radius: 5px;
+}
+
+.file-image {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    filter: brightness(0) invert(1);
+}
+
+.delete-button{
+    cursor: pointer;
+    filter: greyscale(100%);
+    margin-left: auto;
+}
+
+.drag-drop-container{
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    left: 300px;
+    height: 150px;
+    border: 2px dashed blue;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.drag-drop-container:hover{
+    border: 5px dashed blue;
+}
+
+.drag-drop-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.drop-text{
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/*-----------------------------------*\
+  # RATINGS
+\*-----------------------------------*/
+
+#userRating {
+    display: none;
+}
+
+
+
+/*-----------------------------------*\
+  #SIDEBAR
+\*-----------------------------------*/
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1a1a1a;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    color: #fff;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
