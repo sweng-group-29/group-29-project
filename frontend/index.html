@@ -37,7 +37,6 @@
   </aside>
   <!-- End Sidebar-->
 
-   
 
     <!-- Main Page -->
     <div class="content">
@@ -74,11 +73,23 @@
                 </div>
             </div>
 
+<!--=======Choose LLM DropDown =========-->
+<div class="dropdown">
+  <span>Mouse over me</span>
+  <div class="dropdown-content">
+    <p>Hello World!</p>
+  </div>
+</div>
             <!-- File upload form -->
+
             <form id="textForm" enctype="multipart/form-data">
                 <label for="txtFile">Upload .txt File:</label>
                 <input type="file" id="txtFile" name="txtFile" accept=".txt">
-                <button type="submit">Summarize</button>
+
+    
+                <button type="submit" class="sumarise__button"> Summarise
+                  <img src="assets/images/Icons/sum.png">
+                </button>
             </form>
             <div id="summary">
                 <!-- Summarized text will be displayed here -->
