@@ -9,16 +9,30 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
     background-color: #222627;
     color: #fefefe;
 }
 
+/* Light Mode/Dark Mode */
+/*
+.dark-mode {
+    background-color: #222627;
+    color: #fefefe;
+}
+
+.light-mode {
+    background-color: #fefefe;
+    color: #222627;
+}*/
+  
 .content {
     margin-left: 250px;
     padding: 20px;
 }
 
 header {
+    background-color: #222627;
     /*background-color: #222627;*/
     color: #fff;
     padding: 20px;
@@ -49,6 +63,8 @@ input[type="file"] {
     margin-bottom: 20px;
 }
 
+
+
 button {
     padding: 10px 20px;
     background-color: #007bff;
@@ -78,6 +94,48 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Buttons to select the document */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+
+.selectDocButton {
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 325px;
+}
+
+.selectDocButton img {
+    background-color: #1a1a1a;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-right: 10px; 
+}
+
+.button-title {
+    font-size: 18px;
+}
+
+.button-subtext {
+    font-size: 14px; 
+    color: #1a1a1a; 
+}
+
+.button-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-name {
+    margin-top: 20px;
+}
+
+
 
 /*-----------------------------------*\
   # FILE MANAGER
