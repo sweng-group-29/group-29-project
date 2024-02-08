@@ -3,12 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>Report Summarization</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Sidebar-->
-    <div id="sidebar"></div>
+    <!-- ======= Sidebar ======= -->
+  <aside class="sidebar">
+    <ul class="sidebar__nav__list">
+
+       <li class="nav__item__active">
+        <a class="nav__link" href="">
+          <img src="assets/images/Icons/homeActive.png">
+          <span>Summariser</span>
+        </a>
+      </li>
+
+      <li class="nav__item">
+        <a class="nav__link" href="fileManager.html">
+          <img src="assets/images/Icons/file.png">
+          <span>Files</span>
+        </a>
+      </li>
+
+       <li class="nav__item">
+        <a class="nav__link" href="">
+          <img src="assets/images/Icons/stat.png">
+          <span>Statistics</span>
+        </a>
+      </li>
+
+    </ul>
+  
+  </aside>
+  <!-- End Sidebar-->
+
+   
+
+    <!-- Main Page -->
+    <div class="content">
+        <div class="heading"> Report Summariser</div>
+        <div class="subheading">Summarise reports using large languge models</div>
+        
+        <main>
+            <!-- Select File to Summarize and File upload form -->
+            <div class="container">
+                <div class="select-document">
+                    <button id="openWindowButton" class="selectDocButton">
+                        <img src="assets/images/add.svg" alt="Add" width="70" height="70">
+                        <div class="button-text">
+                            <span class="button-title">Select Document</span>
+                            <span class="button-subtext">Choose an existing document</span>
+                        </div>
+                    </button>
+                </div>
+            
+                <!-- File upload form -->
+                <div class="upload-form">
+                    <form id="textForm" enctype="multipart/form-data">
+                        <!--<label for="txtFile">Upload .txt File:</label>-->
+                        <input type="file" id="txtFile" name="txtFile" accept=".txt" style="display: none;">
+                        <button type="button" class="selectDocButton" id="customFileUpload">
+                            <img src="assets/images/upload.svg" alt="Submit" width="70" height="70">
+                            <div class="button-text">
+                                <span class="button-title">Submit</span>
+                                <span class="button-subtext">Upload a Document</span>
+                            </div>
+                        </button>
+                        <div id="fileName" class="file-name"></div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- File upload form -->
+            <form id="textForm" enctype="multipart/form-data">
+                <label for="txtFile">Upload .txt File:</label>
+                <input type="file" id="txtFile" name="txtFile" accept=".txt">
+                <button type="submit">Summarize</button>
+            </form>
+            <div id="summary">
+                <!-- Summarized text will be displayed here -->
+                <!-- Eg-->
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <!-- User rating -->
+            <!-- Will display after text has been summarized -->
+            <form id="userRating">
+                <h3>Rate the LLM's Performance:</h3>
+                <input type="radio" id="1" name="rating" value="1">
+                <label for="1">1</label><br>
+                <input type="radio" id="2" name="rating" value="2">
+                <label for="2">2</label><br>
+                <input type="radio" id="3" name="rating" value="3">
+                <label for="3">3</label><br>
+                <input type="radio" id="4" name="rating" value="4">
+                <label for="4">4</label><br>
+                <input type="radio" id="5" name="rating" value="5">
+                <label for="5">5</label><br><br>
+                <button type="submit">Submit Rating</button>
+            </form>
+
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
