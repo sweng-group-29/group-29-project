@@ -46,9 +46,12 @@
                 </div>
             </div>
 
-            <!-- Summarize button -->
-            <button id="summarizeButton">Summarize</button>
-
+            <!-- File upload form -->
+            <form id="textForm" enctype="multipart/form-data">
+                <label for="txtFile">Upload .txt File:</label>
+                <input type="file" id="txtFile" name="txtFile" accept=".txt">
+                <button type="submit">Summarize</button>
+            </form>
             <div id="summary">
                 <!-- Summarized text will be displayed here -->
                 <!-- Eg-->

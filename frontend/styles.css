@@ -33,6 +33,7 @@ body {
 
 header {
     background-color: #222627;
+    /*background-color: #222627;*/
     color: #fff;
     padding: 20px;
     text-align: left;
@@ -135,6 +136,76 @@ footer {
 }
 
 
+
+/*-----------------------------------*\
+  # FILE MANAGER
+\*-----------------------------------*/
+
+.file-input{
+    display: none;
+}
+
+.file-list {
+    padding: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.file-item{
+    margin-bottom: 5px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding:5px;
+    border:2px dashed #fff;
+    border-radius: 5px;
+}
+
+.file-image {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    filter: brightness(0) invert(1);
+}
+
+.delete-button{
+    cursor: pointer;
+    filter: greyscale(100%);
+    margin-left: auto;
+}
+
+.drag-drop-container{
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    left: 300px;
+    height: 150px;
+    border: 2px dashed blue;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.drag-drop-container:hover{
+    border: 5px dashed blue;
+}
+
+.drag-drop-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.drop-text{
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
 
 /*-----------------------------------*\
   # RATINGS
