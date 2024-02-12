@@ -1,4 +1,11 @@
 
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('dropDown').addEventListener('click', function() {
+    document.querySelector('.drop-down').classList.toggle('drop-down--active');
+  });
+});
+
+
 // Load sidebar into each page
 window.onload = function () {
     fetch('components/sidebar.html')
@@ -120,3 +127,4 @@ function handleDrop(event) {
 function handleDragOver(event) {
     event.preventDefault();
 }
+

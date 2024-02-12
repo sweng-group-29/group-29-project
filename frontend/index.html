@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report Summarization</title>
+    <title>SwEng29</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- ======= Sidebar ======= -->
   <aside class="sidebar">
+    <img class="logo" src="assets/images/logomain.png">
     <ul class="sidebar__nav__list">
 
        <li class="nav__item__active">
@@ -73,16 +74,54 @@
                 </div>
             </div>
 
-<!--=======Choose LLM DropDown =========-->
-<div class="dropdown">
-  <span>Mouse over me</span>
-  <div class="dropdown-content">
-    <p>Hello World!</p>
-  </div>
-</div>
+
+        <!--DROPDOWN LLM SELECT-->
+       <div class="drop-down">
+         <div id="dropDown" class="drop-down__button"> 
+          <div class="dropDown__leftWrapper">
+          <img class="dropDown__chip" src="assets/images/Icons/chip.png">
+          <span class="drop-down__name">Please Choose a Language Model</span>
+          </div>
+          <img class="dropDown__down" src="assets/images/Icons/down.png">
+         </div>
+         
+                <div class="drop-down__menu-box">
+
+                  <ul class="drop-down__menu">
+                    <li data-name="profile" class="drop-down__item"> LLM 1</li>
+                    <li data-name="dashboard" class="drop-down__item"> LLM 2</li>
+                    <li data-name="activity" class="drop-down__item"> LLM 3</li>
+                  </ul>
+
+                </div>
+     
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- File upload form -->
 
-            <form id="textForm" enctype="multipart/form-data">
+            <form id="textForm" enctype="multipart/form-data" style="z-index: -10;">
                 <label for="txtFile">Upload .txt File:</label>
                 <input type="file" id="txtFile" name="txtFile" accept=".txt">
 
