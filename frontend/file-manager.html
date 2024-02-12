@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Summarization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Sidebar-->
+    <div id="sidebar"></div>
+
+    <div class="content">
+        <header>
+            <h1>File Manager</h1>
+            <h4 class="subheading"> View recent files here</h4>
+        </header>
+
+        <main>
+            <input type="file" id="fileInput" class="file-input" onchange="handleFileSelect(event)" multiple
+                style="display: none;" accept=".txt">
+
+            <div id="fileList" class="file-list"></div>
+
+            <label for="fileInput" class="drag-drop-container" ondrop="handleDrop(event)"
+                ondragover="handleDragOver(event)">
+                <div class="content-wrapper">
+                    <img src="plus.png" alt="Drag and drop icon" class="drag-drop-icon">
+                    <p class="drop-text">Drop your files here<br> or click to add </p>
+                </div>
+            </label>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
