@@ -1,4 +1,7 @@
 
+
+// LLM Page
+
 // Load sidebar into each page
 window.onload = function () {
     fetch('components/sidebar.html')
@@ -32,25 +35,18 @@ window.onload = function () {
 var selectedFile = null;
 
 // Show ratings when report is summarized
-document.getElementById('textForm').addEventListener('submit', function(event) {
-    // Prevent the form from submitting normally
-    event.preventDefault();
+function showSummary() {
+    var summaryDiv = document.getElementById("summary");
+    var summarizedText = document.getElementById("summarizedText");
+    var userRatingForm = document.getElementById("userRating");
 
-    // Check if a file has been selected
-    var fileInput = document.getElementById('txtFile');
-    if (fileInput.files.length === 0) {
-        alert('Please select a file.');
-        return;
-    }
+    // Show the summary and user rating form
+    summaryDiv.style.display = "block";
+    userRatingForm.style.display = "block";
 
-    // If a file is selected, show the rating form
-    document.getElementById('userRating').style.display = 'block';
-
-    // If a file is uploaded, use it; otherwise, use the selected file
-    var fileToUse = fileInput.files.length > 0 ? fileInput.files[0] : selectedFile;
-
-    // Now you can use fileToUse to do whatever you need with the file
-});
+    // Update the summarized text
+    summarizedText.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+}
 
 
 document.getElementById('openWindowButton').addEventListener('click', function() {
@@ -67,6 +63,10 @@ document.getElementById('txtFile').addEventListener('change', function() {
     document.getElementById('fileName').textContent = 'File Chosen: ' + fileName;
 });
 
+
+
+
+// File Manager
 
 document.addEventListener('DOMContentLoaded', () => {
     const fileList = document.getElementById('fileList');

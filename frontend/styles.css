@@ -72,10 +72,26 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 10px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#summarizeButton img {
+    width: 20px; 
+    height: 20px; 
+    margin-left: 10px;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 #summary {
@@ -133,6 +149,33 @@ footer {
 
 .file-name {
     margin-top: 20px;
+}
+
+/* Language Select Dropdown */
+
+.language-model-selection {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.language-model-selection select {
+    width: 200px;
+    height: 40px;
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-family: Arial, sans-serif; 
+}
+
+label {
+    margin-bottom: 20px;
 }
 
 
