@@ -67,7 +67,7 @@ input[type="file"] {
 
 button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #004685;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -85,7 +85,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #ee1c25;
 }
 
 .button-container {
@@ -95,7 +95,7 @@ button:hover {
 }
 
 #summary {
-    border: 3px dotted #007bff;
+    border: 3px dotted #004685;
     padding: 10px;
     margin-top: 20px;
     border-radius: 10px;
@@ -166,7 +166,7 @@ footer {
     width: 200px;
     height: 40px;
     padding: 10px 20px;
-    background-color: #007bff; 
+    background-color: #004685; 
     color: #fff; 
     border: none; 
     border-radius: 10px; 
@@ -223,7 +223,7 @@ label {
     right: 20px;
     left: 300px;
     height: 150px;
-    border: 2px dashed blue;
+    border: 2px dashed #004685;
     padding: 20px;
     text-align: center;
     border-radius: 10px;
@@ -234,7 +234,7 @@ label {
 }
 
 .drag-drop-container:hover{
-    border: 5px dashed blue;
+    border: 5px dashed #004685;
 }
 
 .drag-drop-icon{
@@ -271,7 +271,9 @@ label {
     left: 0;
     background-color: #1a1a1a;
     padding-top: 20px;
+    text-align: center;
 }
+
 
 .sidebar h2 {
     color: #fff;
@@ -286,7 +288,7 @@ label {
 .sidebar ul li {
     padding: 10px;
     text-align: left;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 .sidebar ul li a {
