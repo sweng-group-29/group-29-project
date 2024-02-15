@@ -1,6 +1,7 @@
 
-
-// LLM Page
+// --------------------------------- //
+// Sidebar
+// --------------------------------- //
 
 // Load sidebar into each page
 window.onload = function () {
@@ -8,28 +9,24 @@ window.onload = function () {
         .then(response => response.text())
         .then(data => {
             document.getElementById('sidebar').innerHTML = data;
+
+            // Add the event listener after the sidebar is loaded
+            document.getElementById('nav-toggle').addEventListener('change', function() {
+                if(this.checked) {
+                    document.body.classList.add('sidebar-open');
+                } else {
+                    document.body.classList.remove('sidebar-open');
+                }
+            });
         })
         .catch(error => {
             console.error('Error:', error);
         });
-
-    
-    // Select theme
-    /*
-    var modeSelector = document.getElementById('mode-selector');
-    // Apply the saved theme
-    var savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      document.body.className = savedTheme;
-      modeSelector.value = savedTheme;
-    }
-    // Save the selected theme and apply it
-    modeSelector.addEventListener('change', function() {
-      document.body.className = this.value;
-      localStorage.setItem('theme', this.value);
-    });
-    */
 }
+
+// --------------------------------- //
+// LLM-Screen
+// --------------------------------- //
 
 // Global variable to store the selected file
 var selectedFile = null;
@@ -63,10 +60,9 @@ document.getElementById('txtFile').addEventListener('change', function() {
     document.getElementById('fileName').textContent = 'File Chosen: ' + fileName;
 });
 
-
-
-
+// --------------------------------- //
 // File Manager
+// --------------------------------- //
 
 document.addEventListener('DOMContentLoaded', () => {
     const fileList = document.getElementById('fileList');
