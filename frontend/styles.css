@@ -330,10 +330,10 @@ label {
     #nav-bar hr {
       margin: 0;
       position: relative;
-      left: 16px;
+      left: 8px;
       width: calc(100% - 32px);
       border: none;
-      border-top: solid 1px var(--navbar-dark-secondary); }
+      border-top: solid 1px var(--navbar-light-secondary); }
     #nav-bar a {
       color: inherit;
       text-decoration: inherit; }
@@ -410,6 +410,14 @@ label {
       background-color: #D62929; }
     #nav-content::-webkit-scrollbar-button {
       height: 16px; }
+
+  #nav-content hr {
+    margin: 0;
+    position: relative;
+
+    width: calc(100% - 32px);
+    border: none;
+    border-top: solid 1px var(--navbar-light-secondary); }
   
   #nav-content-highlight {
     position: absolute;
