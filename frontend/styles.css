@@ -12,11 +12,11 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
     background-color: #222627;
     color: #fefefe;
-    margin-left: 280px;
+    margin-left: 100px;
 }
 
 body.sidebar-open {
-    margin-left: 100px;
+    margin-left: 280px;
 }
 
 /* Light Mode/Dark Mode */

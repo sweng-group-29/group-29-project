@@ -13,9 +13,9 @@ window.onload = function () {
             // Add the event listener after the sidebar is loaded
             document.getElementById('nav-toggle').addEventListener('change', function() {
                 if(this.checked) {
-                    document.body.classList.add('sidebar-open');
-                } else {
                     document.body.classList.remove('sidebar-open');
+                } else {
+                    document.body.classList.add('sidebar-open');
                 }
             });
         })
