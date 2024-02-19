@@ -22,22 +22,19 @@ window.onload = function () {
         .catch(error => {
             console.error('Error:', error);
         });
-    
-    // Load the login form
-    fetch('components/login.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('login').innerHTML = data;
+
+    // --------------------------------- //
+    // Login Page
+    // --------------------------------- //
         
-            const switchers = [...document.querySelectorAll('.switcher')]
-            // Switch between Login and Sign Up
-            switchers.forEach(item => {
-                item.addEventListener('click', function() {
-                    switchers.forEach(item => item.parentElement.classList.remove('is-active'))
-                    this.parentElement.classList.add('is-active')
-                })
-            })
-        })
+    const switchers = [...document.querySelectorAll('.switcher')]
+        
+    switchers.forEach(item => {
+    	item.addEventListener('click', function() {
+    		switchers.forEach(item => item.parentElement.classList.remove('is-active'))
+    		this.parentElement.classList.add('is-active')
+    	})
+    })
 }
 
 // --------------------------------- //
