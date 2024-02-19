@@ -4,19 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report Summarization</title>
+    <title>SwEng29</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Sidebar-->
-    <div id="sidebar"></div>
+      <!-- ======= Sidebar ======= -->
+  <aside class="sidebar">
+     <img class="logo" src="assets/images/logomain.png">
+    <ul class="sidebar__nav__list">
+
+       <li class="nav__item">
+        <a class="nav__link" href="index.html">
+          <img src="assets/images/Icons/home.png">
+          <span>Summariser</span>
+        </a>
+      </li>
+
+      <li class="nav__item__active">
+        <a class="nav__link" href="">
+          <img src="assets/images/Icons/fileActive.png">
+          <span>Files</span>
+        </a>
+      </li>
+
+       <li class="nav__item">
+        <a class="nav__link" href="">
+          <img src="assets/images/Icons/stat.png">
+          <span>Statistics</span>
+        </a>
+      </li>
+
+    </ul>
+   
+  </aside>
+  <!-- End Sidebar-->
+
+   
+
 
     <div class="content">
-        <header>
-            <h1>File Manager</h1>
-            <h4 class="subheading"> View recent files here</h4>
-        </header>
+        <div class="heading"> File Manager </div>
+        <div class="subheading">View and manage your recent files here</div>
 
         <main>
             <input type="file" id="fileInput" class="file-input" onchange="handleFileSelect(event)" multiple
