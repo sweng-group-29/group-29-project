@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// --------------------------------- //
+// Sidebar
+// --------------------------------- //
+
 // Load sidebar into each page
 window.onload = function () {
     fetch('components/sidebar.html')
