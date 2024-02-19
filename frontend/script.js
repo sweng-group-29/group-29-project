@@ -8,31 +8,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Load sidebar into each page
 window.onload = function () {
-    fetch('components/sidebar.html')
+    console.log('LOADING');
+    fetch('sidebar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('sidebar').innerHTML = data;
+             console.log('LOADING2');
+
+            // Add the event listener after the sidebar is loaded
+            document.getElementById('nav-toggle').addEventListener('change', function() {
+                if(this.checked) {
+                    document.body.classList.remove('sidebar-open');
+                } else {
+                    document.body.classList.add('sidebar-open');
+                }
+            });
         })
         .catch(error => {
             console.error('Error:', error);
         });
-
-    
-    // Select theme
-    /*
-    var modeSelector = document.getElementById('mode-selector');
-    // Apply the saved theme
-    var savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      document.body.className = savedTheme;
-      modeSelector.value = savedTheme;
-    }
-    // Save the selected theme and apply it
-    modeSelector.addEventListener('change', function() {
-      document.body.className = this.value;
-      localStorage.setItem('theme', this.value);
-    });
-    */
 }
 
 // Global variable to store the selected file
