@@ -135,7 +135,7 @@ function sum() {
         const fileContents = e.target.result;
 
         try {
-        callFlaskEndpoint('GPT-3', fileContents);
+        callFlaskEndpoint('GPT-3', 'fileContents');
         } catch (error) {
             alert('Error parsing JSON: ' + error.message);
         }
@@ -151,7 +151,7 @@ function sum() {
 }
 
 async function callFlaskEndpoint(llm, prompt) {
-  const url = 'http://localhost:5000/prompt'; 
+  const url = 'http://127.0.0.1:5000/prompt'
   const data = { llm, prompt };
 
   try {
