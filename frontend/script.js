@@ -135,7 +135,7 @@ function sum() {
         const fileContents = e.target.result;
 
         try {
-        callFlaskEndpoint('GPT-3', 'fileContents');
+        callFlaskEndpoint('facebook/bart-large-cnn', fileContents);
         } catch (error) {
             alert('Error parsing JSON: ' + error.message);
         }
