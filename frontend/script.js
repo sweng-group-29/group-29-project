@@ -153,7 +153,7 @@ function sum() {
 
     // Read the file as text
     reader.readAsText(file);
-    alert('Please select a file first!'); 
+    //alert('Please select a file first!'); 
 }
 
 async function callFlaskEndpoint(llm, prompt) {
@@ -175,7 +175,10 @@ async function callFlaskEndpoint(llm, prompt) {
 
     const result = await response.json(); 
     console.log(result);
-      alert(JSON.stringify(result, null, 2)); 
+    //alert(JSON.stringify(result, null, 2)); 
+
+    const resultBox = document.getElementById('summary').children[0];
+    resultBox.innerHTML = result.summary[0].summary_text;
 
   } catch (error) {
     console.error('Error:', error);
