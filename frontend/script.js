@@ -180,7 +180,9 @@ async function callFlaskEndpoint(llm, prompt) {
     console.log(result);
     //alert(JSON.stringify(result, null, 2)); 
 
-    const resultBox = document.getElementById('summary').children[0];
+      const resultBox = document.getElementById('summary').children[0];
+      const outerbox = document.getElementById('summary');
+    outerbox.style.visibility = "visible";
     resultBox.innerHTML = result.summary[0].summary_text;
 
   } catch (error) {
