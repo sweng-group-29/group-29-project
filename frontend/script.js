@@ -12,10 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Load sidebar into each page
 window.onload = function () {
-    fetch('components/sidebar.html')
+    console.log('LOADING');
+    fetch('sidebar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('sidebar').innerHTML = data;
+<<<<<<< HEAD
+             console.log('LOADING2');
+=======
+>>>>>>> main
 
             // Add the event listener after the sidebar is loaded
             document.getElementById('nav-toggle').addEventListener('change', function() {
