@@ -250,17 +250,16 @@ label {
 }
 
 .drag-drop-container{
- width: 80%;
+    width: 80%;
     position: fixed;
-    /* bottom: 120px; */
-    margin-top: 10px;
+    margin-top: 40px;
     /* right: 4px; */
     /* left: 300px; */
     height: 150px;
     border: 2px dashed #0088ff;
     padding: 20px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 16px;
     display: inline;
     align-items: center;
     justify-content: center;
@@ -268,7 +267,7 @@ label {
 }
 
 .drag-drop-container:hover{
-    border: 5px dashed #004685;
+    border: 4px dashed #53afff;
 }
 
 .drag-drop-icon{
@@ -276,11 +275,14 @@ label {
     height: 50px;
     border-radius: 50%;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .drop-text{
-    font-size: 16px;
-    color: #555;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #0088ff;
     margin-top: 10px;
 }
 
@@ -492,13 +494,13 @@ label {
 }
 
 #nav-toggle:checked~#nav-header #nav-toggle-burger {
-    background: var(--navbar-light-primary);
+    background: #FFFFFF;
 }
 
 #nav-toggle:checked~#nav-header #nav-toggle-burger:before,
 #nav-toggle:checked~#nav-header #nav-toggle-burger::after {
     width: 16px;
-    background: var(--navbar-light-secondary);
+    background: #FFFFFF;
     transform: translate(0, 0) rotate(0deg);
 }
 
@@ -549,8 +551,15 @@ label {
 }
 
 #nav-bar a {
-    color: inherit;
+    color: #0088ff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
     text-decoration: inherit;
+}
+
+#nav-bar a:hover {
+    color: #0088ff;
+   
 }
 
 #nav-bar input[type="checkbox"] {
@@ -770,7 +779,9 @@ label[for="nav-toggle"] {
     top: 394px;
 }
 
-
+#nav-bar a:hover {
+    color: #0088ff;
+}
 
 #nav-bar .fas {
     min-width: 3rem;
@@ -788,6 +799,9 @@ label[for="nav-toggle"] {
     flex-direction: column;
     z-index: 2;
     transition: width .2s, height .2s;
+}
+#nav-footer a {
+    color: #FFFFFF;
 }
 
 #nav-footer-heading {
@@ -824,8 +838,8 @@ label[for="nav-toggle"] {
 }
 
 #nav-footer-subtitle {
-    color: var(--navbar-light-secondary);
-    font-size: .6rem;
+    color: #0088ff;
+    font-size: 10px;
 }
 
 #nav-toggle:not(:checked)~#nav-footer-toggle:checked+#nav-footer {
