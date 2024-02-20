@@ -112,7 +112,7 @@ button:hover {
 }
 
 #summary {
-    
+
     border: 2px dotted #0088ff;
     visibility: hidden;
     padding: 10px;
@@ -250,12 +250,14 @@ label {
 }
 
 .drag-drop-container{
+ width: 80%;
     position: fixed;
-    bottom: 120px;
-    right: 20px;
-    left: 300px;
+    /* bottom: 120px; */
+    margin-top: 10px;
+    /* right: 4px; */
+    /* left: 300px; */
     height: 150px;
-    border: 2px dashed #004685;
+    border: 2px dashed #0088ff;
     padding: 20px;
     text-align: center;
     border-radius: 10px;

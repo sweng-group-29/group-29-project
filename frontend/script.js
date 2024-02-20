@@ -59,7 +59,7 @@ function showSummary() {
 
 
 document.getElementById('openWindowButton').addEventListener('click', function() {
-    window.open('files.html', '_blank', 'width=600,height=600');
+    window.open('fileManager.html', '_blank', 'width=600,height=600');
   });
 
   // Hide choose file button and show file name
