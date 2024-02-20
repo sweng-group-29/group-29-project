@@ -23,8 +23,10 @@ window.onload = function () {
             document.getElementById('nav-toggle').addEventListener('change', function() {
                 if(this.checked) {
                     document.body.classList.remove('sidebar-open');
+                    document.getElementById('content').style.marginLeft = "70px";
                 } else {
                     document.body.classList.add('sidebar-open');
+                    document.getElementById('content').style.marginLeft = "255px";
                 }
             });
         })
@@ -51,6 +53,7 @@ function showSummary() {
     userRatingForm.style.display = "block";
 
     // Update the summarized text
+    summarizedText.style.visibility = "visible";
     summarizedText.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 }
 
