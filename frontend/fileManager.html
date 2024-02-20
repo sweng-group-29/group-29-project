@@ -9,43 +9,16 @@
 </head>
 
 <body>
-      <!-- ======= Sidebar ======= -->
-  <aside class="sidebar">
-     <img class="logo" src="assets/images/logomain.png">
-    <ul class="sidebar__nav__list">
-
-       <li class="nav__item">
-        <a class="nav__link" href="index.html">
-          <img src="assets/images/Icons/home.png">
-          <span>Summariser</span>
-        </a>
-      </li>
-
-      <li class="nav__item__active">
-        <a class="nav__link" href="">
-          <img src="assets/images/Icons/fileActive.png">
-          <span>Files</span>
-        </a>
-      </li>
-
-       <li class="nav__item">
-        <a class="nav__link" href="">
-          <img src="assets/images/Icons/stat.png">
-          <span>Statistics</span>
-        </a>
-      </li>
-
-    </ul>
-   
-  </aside>
-  <!-- End Sidebar-->
-
-   
-
+    <!-- Sidebar-->
+    <div id="sidebar"></div>
 
     <div class="content">
-        <div class="heading"> File Manager </div>
-        <div class="subheading">View and manage your recent files here</div>
+      <div class="content">
+        <header>
+            <h1>File Manager</h1>
+            <h4>View and manage your recent files here</h4>
+        </header>
+      </div>
 
         <main>
             <input type="file" id="fileInput" class="file-input" onchange="handleFileSelect(event)" multiple
