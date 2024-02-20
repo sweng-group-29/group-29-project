@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from huggingfaceAPI import queryLLM
+from flask_cors import cross_origin
 
 app = Flask(__name__)
 
@@ -8,6 +9,7 @@ def analyze_llm(llm, prompt):               #not sure what our actual llm analys
     return summary
 
 @app.route('/prompt', methods=['POST'])
+@cross_origin()
 def handle_prompt():
     try:
         data = request.get_json() # im assuming the data is json?
