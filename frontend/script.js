@@ -17,10 +17,7 @@ window.onload = function () {
         .then(response => response.text())
         .then(data => {
             document.getElementById('sidebar').innerHTML = data;
-<<<<<<< HEAD
              console.log('LOADING2');
-=======
->>>>>>> main
 
             // Add the event listener after the sidebar is loaded
             document.getElementById('nav-toggle').addEventListener('change', function() {
@@ -185,4 +182,3 @@ async function callFlaskEndpoint(llm, prompt) {
     alert('Error calling the Flask endpoint: ' + error.message);
   }
 }
-

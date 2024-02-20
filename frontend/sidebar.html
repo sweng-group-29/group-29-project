@@ -1,42 +1,38 @@
-<!-- Universal Sidebar for all pages
+
 <div class="sidebar">
     <img src="assets/images/citi.png" alt="Citi" width="89" height="50">
-    <ul>
-        <li><img src="assets/images/summ.svg" alt="Summarize Icon"><a href="llm-screen.html" class="active">Summarize Report</a></li>
-        <li><img src="assets/images/file.svg" alt="Files Icon"><a href="file-manager.html" class="active">Files</a></li>
-        <li><img src="assets/images/bar.svg" alt="Statistics Icon"><a href="index.html" class="active">Statistics</a></li>
-        <li><img src="assets/images/cog.svg" alt="Settings Icon"><a href="settings.html" class="active">Settings</a></li>
-    </ul>
-</div>-->
-
-
+  
 <div id="nav-bar">
     <input id="nav-toggle" type="checkbox" checked/>
-    <div id="nav-header"><a id="nav-title" href="https://www.citi.com/" target="_blank"><img class="logo" src="assets/images/logomain.png" alt=""></a>
+    <div id="nav-header"><a id="nav-title" href="https://www.citi.com/" target="_blank">Menu</a>
       <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
-  
+      <hr/>
     </div>
     <div id="nav-content">
-
-      <a href="index.html" class="nav-button">
+      <a href="llm-screen.html" class="nav-button">
         <div class="nav-button">
-          <img class="nav-bar-icon" src="assets/images/Icons/homeActive.png">
-          <span>Summariser</span>
+            <img src="assets/images/summ.svg" alt="Summary Icon" class="fas">
+            <span>Summarize</span>
         </div>
       </a>
-      <a href="fileManager.html" class="nav-button">
+      <a href="file-manager.html" class="nav-button">
         <div class="nav-button">
-          <img class="nav-bar-icon" src="assets/images/Icons/file.png">
-          <span>Files</span>
+            <img src="assets/images/file.svg" alt="Files Icon" class="fas">
+            <span>Files</span>
         </div>
       </a>
-      <a href="index.html" class="nav-button">
+      <a href="statistics.html" class="nav-button">
         <div class="nav-button">
-          <img class="nav-bar-icon" src="assets/images/Icons/stat.png">
+          <img src="assets/images/bar.svg" alt="Statistics Icon" class="fas">
           <span>Statistics</span>
         </div>
       </a>
-      
+      <a href="settings.html" class="nav-button">
+        <div class="nav-button">
+          <img src="assets/images/cog.svg" alt="Settings Icon" class="fas">
+          <span>Settings</span>
+        </div>
+      </a>
       <div id="nav-content-highlight"></div>
     </div>
     <input id="nav-footer-toggle" type="checkbox"/>
@@ -46,8 +42,10 @@
         <div id="nav-footer-titlebox"><a id="nav-footer-title" href="settings.html" target="_blank">User</a><span id="nav-footer-subtitle">Admin</span></div>
         <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
       </div>
-    
+      <div id="nav-footer-content">
+        <Lorem>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Lorem>
+      </div>
     </div>
   </div>
-
+</div>
   
