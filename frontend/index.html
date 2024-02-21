@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwEng29</title>
     <link rel="stylesheet" href="styles.css">
+ 
 </head>
 <body>
-    <!-- ======= Sidebar ======= -->
+
+  <div id="sidebar"></div>
+    <!-- ======= Sidebar
   <aside class="sidebar">
     <img class="logo" src="assets/images/logomain.png">
     <ul class="sidebar__nav__list">
@@ -36,6 +39,7 @@
     </ul>
   
   </aside>
+   ======= -->
   <!-- End Sidebar-->
 
 
@@ -122,11 +126,7 @@
             <!-- File upload form -->
 
             <form id="textForm" enctype="multipart/form-data" style="z-index: -10;">
-                <label for="txtFile">Upload .txt File:</label>
-                <input type="file" id="txtFile" name="txtFile" accept=".txt">
-
-    
-                <button type="submit" class="sumarise__button"> Summarise
+                <button type="button" class="sumarise__button" onclick="sum()"> Summarise
                   <img src="assets/images/Icons/sum.png">
                 </button>
             </form>
