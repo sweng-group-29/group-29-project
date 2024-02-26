@@ -6,6 +6,11 @@
 \*-----------------------------------*/
 
 body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+
     font-family: Arial, sans-serif;
     transition: margin-left 0.3s;
     padding: 0;
@@ -13,35 +18,33 @@ body {
     background-color: #222627;
     color: #fefefe;
     margin-left: 100px;
-}
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+
+  }
 
 body.sidebar-open {
     margin-left: 280px;
 }
 
-/* Light Mode/Dark Mode */
-/*
-.dark-mode {
-    background-color: #222627;
-    color: #fefefe;
-}
-
-.light-mode {
-    background-color: #fefefe;
-    color: #222627;
-}*/
-  
-
-
 header {
-    background-color: #222627;
     color: #fff;
     padding: 20px;
     text-align: left;
 }
 
 .subheading{
-    color: #474d4f;
+    color: lightgray;
     text-align: left;
 }
 
@@ -128,10 +131,11 @@ footer {
 }
 
 .selectDocButton img {
-    background-color: #1a1a1a;
+    mix-blend-mode: screen;
     padding: 10px 10px;
     border-radius: 10px;
     margin-right: 10px; 
+    background: transparent;
 }
 
 .button-title {
@@ -140,7 +144,7 @@ footer {
 
 .button-subtext {
     font-size: 14px; 
-    color: #1a1a1a; 
+    color: lightgray; 
 }
 
 .button-text {
@@ -265,7 +269,7 @@ label {
 \*-----------------------------------*/
 
 :root {
-    --background: #222627;
+    --background: #219de2;
     --navbar-width: 256px;
     --navbar-width-min: 80px;
     --navbar-dark-primary: #004685;
