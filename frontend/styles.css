@@ -269,13 +269,14 @@ label {
 \*-----------------------------------*/
 
 :root {
-    --background: #219de2;
+    /*--background: #219de2;*/
+    --background: #f5f6fa;
     --navbar-width: 256px;
     --navbar-width-min: 80px;
-    --navbar-dark-primary: #004685;
+    --navbar-dark-primary: transparent;
     --navbar-dark-secondary: #2c3e50;
     --navbar-light-primary: #f5f6fa;
-    --navbar-light-secondary: #8392a5; }
+    --navbar-light-secondary: lightgray; }
 
   
   #nav-toggle:checked ~ #nav-header {
@@ -295,7 +296,8 @@ label {
     transform: translate(-50%); }
   
   #nav-toggle:checked ~ #nav-header #nav-toggle-burger {
-    background: var(--navbar-light-primary); }
+    background: var(--navbar-light-primary);
+  }
     #nav-toggle:checked ~ #nav-header #nav-toggle-burger:before, #nav-toggle:checked ~ #nav-header #nav-toggle-burger::after {
       width: 16px;
       background: var(--navbar-light-secondary);
@@ -319,6 +321,7 @@ label {
     pointer-events: none; }
   
   #nav-bar {
+    box-shadow: inset 0 0 0 1px var(--navbar-light-secondary);
     position: fixed;
     left: 1vw;
     top: 1vw;
@@ -375,6 +378,7 @@ label {
     cursor: pointer; }
   
   #nav-toggle-burger {
+    margin-top: 50%;
     position: relative;
     width: 16px;
     height: 2px;
@@ -429,7 +433,7 @@ label {
     top: -70px;
     width: calc(100% - 16px);
     height: 54px;
-    background: var(--background);
+    background: var(--navbar-light-secondary);
     background-attachment: fixed;
     border-radius: 16px 0 0 16px;
     transition: top .2s; }
@@ -441,10 +445,11 @@ label {
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      box-shadow: 16px 16px var(--background); }
+      box-shadow: 16px 16px var(--navbar-light-secondary);
+    }
     #nav-content-highlight:after {
       top: 100%;
-      box-shadow: 16px -16px var(--background); }
+      box-shadow: 16px -16px var(--navbar-light-secondary); }
   
   .nav-button {
     position: relative;
@@ -462,7 +467,7 @@ label {
     .nav-button .fas {
       transition: min-width .2s; }
     .nav-button:nth-of-type(1):hover {
-      color: var(--navbar-light-secondary); }
+      color: var(--navbar-light-primary); }
       .nav-button:nth-of-type(1):hover ~ #nav-content-highlight {
         top: 16px; }
     .nav-button:nth-of-type(2):hover {
