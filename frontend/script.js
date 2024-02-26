@@ -1,17 +1,10 @@
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('dropDown').addEventListener('click', function() {
-    document.querySelector('.drop-down').classList.toggle('drop-down--active');
-  });
-});
-
-
 // --------------------------------- //
 // Sidebar
 // --------------------------------- //
 
-// Load sidebar into each page
 window.onload = function () {
+    // Load sidebar into each page
     fetch('components/sidebar.html')
         .then(response => response.text())
         .then(data => {
@@ -29,6 +22,19 @@ window.onload = function () {
         .catch(error => {
             console.error('Error:', error);
         });
+
+    // --------------------------------- //
+    // Login Page
+    // --------------------------------- //
+        
+    const switchers = [...document.querySelectorAll('.switcher')]
+        
+    switchers.forEach(item => {
+    	item.addEventListener('click', function() {
+    		switchers.forEach(item => item.parentElement.classList.remove('is-active'))
+    		this.parentElement.classList.add('is-active')
+    	})
+    })
 }
 
 // --------------------------------- //
@@ -123,4 +129,6 @@ function handleDrop(event) {
 function handleDragOver(event) {
     event.preventDefault();
 }
+
+
 
