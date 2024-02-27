@@ -132,3 +132,66 @@ function handleDragOver(event) {
 
 
 
+// Summmary
+
+function sum() { 
+    const fileInput = document.getElementById('txtFile');
+    const file = fileInput.files[0]; // Assuming there's at least one file selected
+
+    if (!file) {
+        alert('Please select a file first!');
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const fileContents = e.target.result;
+
+        try {
+        callFlaskEndpoint('facebook/bart-large-cnn', fileContents);
+        } catch (error) {
+            alert('Error parsing JSON: ' + error.message);
+        }
+    };
+
+    reader.onerror = function() {
+        alert('Error reading file!');
+    };
+
+    // Read the file as text
+    reader.readAsText(file);
+    //alert('Please select a file first!'); 
+}
+
+async function callFlaskEndpoint(llm, prompt) {
+  const url = 'http://127.0.0.1:5000/prompt'
+  const data = { llm, prompt };
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    
+    if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+    }
+
+    const result = await response.json(); 
+    console.log(result);
+    //alert(JSON.stringify(result, null, 2)); 
+
+      const resultBox = document.getElementById('summary').children[0];
+      const outerbox = document.getElementById('summary');
+    outerbox.style.visibility = "visible";
+    resultBox.innerHTML = result.summary[0].summary_text;
+
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Error calling the Flask endpoint: ' + error.message);
+  }
+}
