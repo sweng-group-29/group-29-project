@@ -17,17 +17,16 @@ window.onload = function () {
         .then(response => response.text())
         .then(data => {
             document.getElementById('sidebar').innerHTML = data;
-<<<<<<< HEAD
              console.log('LOADING2');
-=======
->>>>>>> main
 
             // Add the event listener after the sidebar is loaded
             document.getElementById('nav-toggle').addEventListener('change', function() {
                 if(this.checked) {
                     document.body.classList.remove('sidebar-open');
+                    document.getElementById('content').style.marginLeft = "70px";
                 } else {
                     document.body.classList.add('sidebar-open');
+                    document.getElementById('content').style.marginLeft = "255px";
                 }
             });
         })
@@ -54,12 +53,13 @@ function showSummary() {
     userRatingForm.style.display = "block";
 
     // Update the summarized text
+    summarizedText.style.visibility = "visible";
     summarizedText.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 }
 
 
 document.getElementById('openWindowButton').addEventListener('click', function() {
-    window.open('files.html', '_blank', 'width=600,height=600');
+    window.open('fileManager.html', '_blank', 'width=600,height=600');
   });
 
   // Hide choose file button and show file name
@@ -156,7 +156,7 @@ function sum() {
 
     // Read the file as text
     reader.readAsText(file);
-    alert('Please select a file first!'); 
+    //alert('Please select a file first!'); 
 }
 
 async function callFlaskEndpoint(llm, prompt) {
@@ -178,11 +178,15 @@ async function callFlaskEndpoint(llm, prompt) {
 
     const result = await response.json(); 
     console.log(result);
-      alert(JSON.stringify(result, null, 2)); 
+    //alert(JSON.stringify(result, null, 2)); 
+
+      const resultBox = document.getElementById('summary').children[0];
+      const outerbox = document.getElementById('summary');
+    outerbox.style.visibility = "visible";
+    resultBox.innerHTML = result.summary[0].summary_text;
 
   } catch (error) {
     console.error('Error:', error);
     alert('Error calling the Flask endpoint: ' + error.message);
   }
 }
-
