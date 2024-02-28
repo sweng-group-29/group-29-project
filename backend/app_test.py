@@ -1,6 +1,7 @@
 import json
 from unittest.mock import patch
 
+
 def test_handle_prompt_success(client):
     with patch('app.queryLLM') as mock_queryLLM:
         mock_queryLLM.return_value = "The foundation of chatbots lies in the GPT (Generative Pre-trained Transformer) large language model. These LLMs process natural language inputs and predict subsequent words based on context. Open-source LLMs are gaining traction, allowing developers to create customizable models at a lower cost."
