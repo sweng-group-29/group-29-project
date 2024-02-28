@@ -1,13 +1,27 @@
 version: '3.8'
 services:
   backend:
-    build: ./backend  # Assuming your Dockerfile is in the backend directory
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
-      - "5000:80"  # Map a host port to the container's port 80
+      - "5000:5000"
     environment:
-      - NAME=World  # Example environment variable, though it's already set in Dockerfile
+      - NAME=World
+    networks:
+      - myapp-network
 
   frontend:
-    build: ./frontend  # Assuming your Dockerfile is in the frontend directory
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
-      - "8080:80"  # Map a different host port to the container's port 80 to avoid conflict with backend
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - myapp-network
+
+networks:
+  myapp-network:
+    driver: bridge
