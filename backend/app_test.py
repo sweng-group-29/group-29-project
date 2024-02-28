@@ -26,3 +26,26 @@ def test_handle_prompt_missing_fields(client):
     data = json.loads(response.data)
     assert data['success'] is False
     assert "Both 'llm' and 'prompt' are required in the request body" in data['error']
+
+def test_handle_prompt_invalid_json(client):
+    response = client.post('/prompt', data="This is not valid JSON", content_type='application/json')
+    
+    assert response.status_code == 400
+    data = json.loads(response.data)
+    assert data['success'] is False
+    assert "Invalid JSON" in data['error']
+
+
+def test_handle_prompt_incorrect_content_type(client):
+    payload = {
+        "llm": "example-llm",
+        "prompt": "Example prompt"
+    }
+    
+    response = client.post('/prompt', data=json.dumps(payload), content_type='text/plain')
+    
+    assert response.status_code == 415  # 415 Unsupported Media Type
+    data = json.loads(response.data)
+    assert data['success'] is False
+    assert "Unsupported Media Type" in data['error']
+
