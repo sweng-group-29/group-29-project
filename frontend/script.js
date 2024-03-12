@@ -160,7 +160,7 @@ function sum() {
 }
 
 async function callFlaskEndpoint(llm, prompt) {
-  const url = 'http://127.0.0.1:5000/prompt'
+  const url = 'http://group29.api.sprinty.tech/prompt'
   const data = { llm, prompt };
 
   try {
