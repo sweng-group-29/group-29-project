@@ -42,10 +42,10 @@ jobs:
 
     steps:
       - name: Pull the Docker image from Docker Hub
-        run: docker pull sullivlu21/flask_app:latest
+        run: docker pull sullivlu21/flask_app_dev:latest
 
       - name: Run tests
-        run: docker run sullivlu21/flask_app:latest /bin/sh -c "pytest"
+        run: docker run sullivlu21/flask_app_dev:latest /bin/sh -c "pytest"
 
   build-frontend:
     runs-on: ubuntu-latest
