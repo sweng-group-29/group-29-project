@@ -1,6 +1,7 @@
 import json
 from unittest.mock import patch
 
+
 def test_handle_prompt_success(client):
     with patch('app.queryLLM') as mock_queryLLM:
         mock_queryLLM.return_value = "The foundation of chatbots lies in the GPT (Generative Pre-trained Transformer) large language model. These LLMs process natural language inputs and predict subsequent words based on context. Open-source LLMs are gaining traction, allowing developers to create customizable models at a lower cost."
@@ -26,3 +27,26 @@ def test_handle_prompt_missing_fields(client):
     data = json.loads(response.data)
     assert data['success'] is False
     assert "Both 'llm' and 'prompt' are required in the request body" in data['error']
+
+def test_handle_prompt_invalid_json(client):
+    response = client.post('/prompt', data="This is not valid JSON", content_type='application/json')
+    
+    assert response.status_code == 400
+    data = json.loads(response.data)
+    assert data['success'] is False
+    assert "Invalid JSON" in data['error']
+
+
+def test_handle_prompt_incorrect_content_type(client):
+    payload = {
+        "llm": "example-llm",
+        "prompt": "Example prompt"
+    }
+    
+    response = client.post('/prompt', data=json.dumps(payload), content_type='text/plain')
+    
+    assert response.status_code == 415  # 415 Unsupported Media Type
+    data = json.loads(response.data)
+    assert data['success'] is False
+    assert "Unsupported Media Type" in data['error']
+

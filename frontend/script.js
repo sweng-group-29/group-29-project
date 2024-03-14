@@ -55,12 +55,13 @@ function showSummary() {
     userRatingForm.style.display = "block";
 
     // Update the summarized text
+    summarizedText.style.visibility = "visible";
     summarizedText.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 }
 
 
 document.getElementById('openWindowButton').addEventListener('click', function() {
-    window.open('files.html', '_blank', 'width=600,height=600');
+    window.open('fileManager.html', '_blank', 'width=600,height=600');
   });
 
   // Hide choose file button and show file name
@@ -79,7 +80,7 @@ document.getElementById('txtFile').addEventListener('change', function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const fileList = document.getElementById('fileList');
-    const fileInput = document.getElementById('fileInput');
+    const fileInput = document.getElementById('txtFile');
     fileInput.addEventListener('change',
         handleFileSelect);
 
@@ -130,9 +131,9 @@ function handleDragOver(event) {
     event.preventDefault();
 }
 
-
-
+// --------------------------------- //
 // Summmary
+// --------------------------------- //
 
 function sum() { 
     const fileInput = document.getElementById('txtFile');
@@ -195,3 +196,4 @@ async function callFlaskEndpoint(llm, prompt) {
     alert('Error calling the Flask endpoint: ' + error.message);
   }
 }
+
