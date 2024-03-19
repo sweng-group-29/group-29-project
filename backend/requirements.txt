@@ -13,3 +13,4 @@ python-dotenv
 flask_cors
 pytest
 gunicorn
+pymongo
