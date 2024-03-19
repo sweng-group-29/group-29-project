@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from huggingfaceAPI import queryLLM
 from flask_cors import cross_origin
 from mongoDB import getAllReviews, addReview
+from werkzeug.exceptions import BadRequest
 
 app = Flask(__name__)
 
@@ -12,6 +13,8 @@ def analyze_llm(llm, prompt):               #not sure what our actual llm analys
 @app.route('/prompt', methods=['POST'])
 @cross_origin()
 def handle_prompt():
+    if request.content_type != 'application/json':
+        return jsonify({"success": False, "error": "Unsupported Media Type"}), 415
     try:
         data = request.get_json() # im assuming the data is json?
         llm = data.get('llm')
@@ -27,7 +30,10 @@ def handle_prompt():
     except ValueError as ve:     #validation error
         error_message = {"success": False, "error": str(ve)}
         return jsonify(error_message), 400
-
+    
+    except BadRequest:
+        return jsonify({"success": False, "error": "Invalid JSON"}), 400  # Directly return the error response
+    
     except Exception as e:  # other exceptions
         error_message = {"success": False, "error": str(e)}
         return jsonify(error_message), 500
