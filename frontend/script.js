@@ -1,38 +1,40 @@
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('dropDown').addEventListener('click', function() {
-    document.querySelector('.drop-down').classList.toggle('drop-down--active');
-  });
-});
-
-
 // --------------------------------- //
 // Sidebar
 // --------------------------------- //
 
-// Load sidebar into each page
 window.onload = function () {
-    console.log('LOADING');
-    fetch('sidebar.html')
+    // Load sidebar into each page
+    fetch('components/sidebar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('sidebar').innerHTML = data;
-             console.log('LOADING2');
 
             // Add the event listener after the sidebar is loaded
             document.getElementById('nav-toggle').addEventListener('change', function() {
                 if(this.checked) {
                     document.body.classList.remove('sidebar-open');
-                    document.getElementById('content').style.marginLeft = "70px";
                 } else {
                     document.body.classList.add('sidebar-open');
-                    document.getElementById('content').style.marginLeft = "255px";
                 }
             });
         })
         .catch(error => {
             console.error('Error:', error);
         });
+
+    // --------------------------------- //
+    // Login Page
+    // --------------------------------- //
+        
+    const switchers = [...document.querySelectorAll('.switcher')]
+        
+    switchers.forEach(item => {
+    	item.addEventListener('click', function() {
+    		switchers.forEach(item => item.parentElement.classList.remove('is-active'))
+    		this.parentElement.classList.add('is-active')
+    	})
+    })
 }
 
 // --------------------------------- //
@@ -129,6 +131,10 @@ function handleDragOver(event) {
     event.preventDefault();
 }
 
+// --------------------------------- //
+// Summmary
+// --------------------------------- //
+
 function sum() { 
     const fileInput = document.getElementById('txtFile');
     const file = fileInput.files[0]; // Assuming there's at least one file selected
@@ -160,7 +166,7 @@ function sum() {
 }
 
 async function callFlaskEndpoint(llm, prompt) {
-  const url = 'http://backend:5000/prompt'
+  const url = 'http://127.0.0.1:5000/prompt'
   const data = { llm, prompt };
 
   try {
@@ -190,3 +196,4 @@ async function callFlaskEndpoint(llm, prompt) {
     alert('Error calling the Flask endpoint: ' + error.message);
   }
 }
+

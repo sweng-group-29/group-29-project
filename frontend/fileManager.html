@@ -9,12 +9,16 @@
 </head>
 
 <body>
-<div id="sidebar"></div>
+    <!-- Sidebar-->
+    <div id="sidebar"></div>
 
-    <!-- Main Page -->
-    <div class="content" id="content">
-        <div class="heading"> File Manager </div>
-        <div class="subheading">View and manage your recent files here</div>
+    <div class="content">
+      <div class="content">
+        <header>
+            <h1>File Manager</h1>
+            <h4>View and manage your recent files here</h4>
+        </header>
+      </div>
 
         <main>
             <input type="file" id="fileInput" class="file-input" onchange="handleFileSelect(event)" multiple
@@ -25,7 +29,7 @@
             <label for="fileInput" class="drag-drop-container" ondrop="handleDrop(event)"
                 ondragover="handleDragOver(event)">
                 <div class="content-wrapper">
-                    <img src="assets/images/Icons/plus.png" alt="Drag and drop icon" class="drag-drop-icon">
+                    <img src="plus.png" alt="Drag and drop icon" class="drag-drop-icon">
                     <p class="drop-text">Drop your files here<br> or click to add </p>
                 </div>
             </label>
