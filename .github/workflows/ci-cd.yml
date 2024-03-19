@@ -71,4 +71,3 @@ jobs:
           push: true
           tags: sullivlu21/frontend_app_dev:latest
           platforms: linux/amd64,linux/arm64
-      
