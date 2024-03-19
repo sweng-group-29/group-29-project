@@ -36,7 +36,7 @@ jobs:
           context: ./backend
           file: ./backend/Dockerfile
           push: true
-          tags: sullivlu21/flask_app_dev:latest
+          tags: sullivlu21/flask_app:latest
           platforms: linux/amd64,linux/arm64
 
   test-backend:
@@ -45,10 +45,10 @@ jobs:
 
     steps:
       - name: Pull the Docker image from Docker Hub
-        run: docker pull sullivlu21/flask_app_dev:latest
+        run: docker pull sullivlu21/flask_app:latest
 
       - name: Run tests
-        run: docker run sullivlu21/flask_app_dev:latest /bin/sh -c "pytest"
+        run: docker run sullivlu21/flask_app:latest /bin/sh -c "pytest"
 
   build-frontend:
     runs-on: ubuntu-latest
@@ -72,5 +72,6 @@ jobs:
           context: ./frontend
           file: ./frontend/Dockerfile
           push: true
-          tags: sullivlu21/frontend_app_dev:latest
+          tags: sullivlu21/frontend_app:latest
           platforms: linux/amd64,linux/arm64
+      
