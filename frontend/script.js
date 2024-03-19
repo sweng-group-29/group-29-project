@@ -17,17 +17,16 @@ window.onload = function () {
         .then(response => response.text())
         .then(data => {
             document.getElementById('sidebar').innerHTML = data;
-<<<<<<< HEAD
              console.log('LOADING2');
-=======
->>>>>>> main
 
             // Add the event listener after the sidebar is loaded
             document.getElementById('nav-toggle').addEventListener('change', function() {
                 if(this.checked) {
                     document.body.classList.remove('sidebar-open');
+                    document.getElementById('content').style.marginLeft = "70px";
                 } else {
                     document.body.classList.add('sidebar-open');
+                    document.getElementById('content').style.marginLeft = "255px";
                 }
             });
         })
@@ -54,12 +53,13 @@ function showSummary() {
     userRatingForm.style.display = "block";
 
     // Update the summarized text
+    summarizedText.style.visibility = "visible";
     summarizedText.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 }
 
 
 document.getElementById('openWindowButton').addEventListener('click', function() {
-    window.open('files.html', '_blank', 'width=600,height=600');
+    window.open('fileManager.html', '_blank', 'width=600,height=600');
   });
 
   // Hide choose file button and show file name
@@ -78,7 +78,7 @@ document.getElementById('txtFile').addEventListener('change', function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const fileList = document.getElementById('fileList');
-    const fileInput = document.getElementById('fileInput');
+    const fileInput = document.getElementById('txtFile');
     fileInput.addEventListener('change',
         handleFileSelect);
 
@@ -129,3 +129,64 @@ function handleDragOver(event) {
     event.preventDefault();
 }
 
+function sum() { 
+    const fileInput = document.getElementById('txtFile');
+    const file = fileInput.files[0]; // Assuming there's at least one file selected
+
+    if (!file) {
+        alert('Please select a file first!');
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const fileContents = e.target.result;
+
+        try {
+        callFlaskEndpoint('facebook/bart-large-cnn', fileContents);
+        } catch (error) {
+            alert('Error parsing JSON: ' + error.message);
+        }
+    };
+
+    reader.onerror = function() {
+        alert('Error reading file!');
+    };
+
+    // Read the file as text
+    reader.readAsText(file);
+    //alert('Please select a file first!'); 
+}
+
+async function callFlaskEndpoint(llm, prompt) {
+  const url = 'http://127.0.0.1:5000/prompt'
+  const data = { llm, prompt };
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    
+    if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+    }
+
+    const result = await response.json(); 
+    console.log(result);
+    //alert(JSON.stringify(result, null, 2)); 
+
+      const resultBox = document.getElementById('summary').children[0];
+      const outerbox = document.getElementById('summary');
+    outerbox.style.visibility = "visible";
+    resultBox.innerHTML = result.summary[0].summary_text;
+
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Error calling the Flask endpoint: ' + error.message);
+  }
+}
