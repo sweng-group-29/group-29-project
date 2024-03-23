@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from huggingfaceAPI import queryLLM
 from flask_cors import cross_origin
+from mongoDB import getAllReviews, addReview
 from werkzeug.exceptions import BadRequest
 
 app = Flask(__name__)
@@ -36,6 +37,19 @@ def handle_prompt():
     except Exception as e:  # other exceptions
         error_message = {"success": False, "error": str(e)}
         return jsonify(error_message), 500
+    
+@app.route('/reviews',methods = ['POST', 'GET'])
+def ratings():
+    if request.method == 'GET':
+        reviews = getAllReviews()
+        return list(reviews)
+    
+    elif request.method == 'POST':
+        llm = request.form.get('llm')
+        rating = request.form.get('rating') 
+        review = request.form.get('review')
+        addReview(llm, rating, review)
+        return jsonify({'ReviewMessage': 'Review has been added'})
 
 if __name__ == '__main__':
     app.run(debug=True)
