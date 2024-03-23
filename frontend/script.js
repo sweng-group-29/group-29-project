@@ -35,6 +35,34 @@ window.onload = function () {
     		this.parentElement.classList.add('is-active')
     	})
     })
+
+    // Get the form and email input elements
+    const form = document.getElementById('login-form');
+    const emailInput = document.getElementById('login-email');
+
+    // Add an event listener for the form submission
+    form.addEventListener('submit', function(event) {
+        // Prevent the form from being submitted normally
+        event.preventDefault();
+
+        // Get the email from the input field
+        const email = emailInput.value;
+
+        // Check if the email is valid
+        if (validateEmail(email)) {
+            // If the email is valid, redirect to the LLM page
+            window.location.href = 'llm.html';  // Replace with the actual URL of the LLM page
+        } else {
+            // If the email is not valid, show an error message
+            alert('Please enter a valid email address.');
+        }
+    });
+
+    // Function to validate an email address
+    function validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }  
 }
 
 // --------------------------------- //
