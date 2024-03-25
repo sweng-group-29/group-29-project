@@ -12,7 +12,7 @@ def read_text_from_file(file_path):
         return file.read()
 
 # File path from which to read text
-file_path = r'C:\Users\padma\InfoManagement2\CitiBankReport.txt'  # Replace with the actual file path
+file_path = r'./text.txt'  # Replace with the actual file path
 
 # Read text from file
 text_to_summarize = read_text_from_file(file_path)
