@@ -11,11 +11,10 @@ body {
     animation: gradient 15s ease infinite;
     height: 100vh;
 
-    font-family: Arial, sans-serif;
-    transition: margin-left 0.3s;
-    padding: 0;
-    transition: background-color 0.5s ease, color 0.5s ease;
-    background-color: #222627;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(36, 36, 36);
+    font-family: 'Inter', sans-serif;
     color: #fefefe;
     margin-left: 100px;
   }
@@ -41,15 +40,18 @@ header {
     color: #fff;
     padding: 20px;
     text-align: left;
+    font-weight: 700;
+    font-size: 28px;
+    padding-top: 35px;
+   
 }
 
 .subheading{
     color: lightgray;
     text-align: left;
-}
-
-main {
-    padding: 20px;
+    font-weight: 400;
+    font-size: 18spx;
+    padding-top: 4px;
 }
 
 form {
@@ -71,7 +73,7 @@ input[type="file"] {
 
 button {
     padding: 10px 20px;
-    background-color: #004685;
+    background-color: rgb(19, 23, 24);
     color: #fff;
     border: none;
     cursor: pointer;
@@ -89,13 +91,7 @@ button {
 }
 
 button:hover {
-    background-color: #ee1c25;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    background-color: rgb(52, 52, 52)
 }
 
 #summary {
@@ -117,17 +113,23 @@ footer {
 
 /* Buttons to select the document */
 .container {
+    margin-top: 40px;
     display: flex;
-    justify-content: center;
-    gap: 70px;
+    justify-content: left;
+    gap: 22px;
 }
 
 .selectDocButton {
-    padding: 20px 20px;
+    height: 200px;
+    padding: 37px;
+    padding-left: 20px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 325px;
+    
+    width: 490px;
+        background-color: #1a1a1a;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
 }
 
 .selectDocButton img {
@@ -139,7 +141,10 @@ footer {
 }
 
 .button-title {
-    font-size: 18px;
+    margin-top: 18px;
+    font-size: 24px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
 }
 
 .button-subtext {
@@ -148,8 +153,11 @@ footer {
 }
 
 .button-text {
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
+    text-align: left;
+    align-content: left;
 }
 
 .file-name {
