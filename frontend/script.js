@@ -137,10 +137,28 @@ function handleDragOver(event) {
 
 function sum() { 
     const fileInput = document.getElementById('txtFile');
+    const languageModelSelect = document.getElementById('languageModel'); // Get the select element
+    const selectedModelValue = languageModelSelect.value; // Get the selected value
+
     const file = fileInput.files[0]; // Assuming there's at least one file selected
 
     if (!file) {
         alert('Please select a file first!');
+        return;
+    }
+
+    // Determine which model to use based on the selected option
+    let modelEndpoint;
+    if (selectedModelValue === 'BART') {
+        modelEndpoint = 'facebook/bart-large-cnn';
+    } else if (selectedModelValue === 'gpt3') {
+        modelEndpoint = 'gpt-3.5-turbo-1106';
+    } else if (selectedModelValue === 'googlepeg') {
+        modelEndpoint = 'google/pegasus-large';
+    } else if (selectedModelValue === 'gpt4') {
+        modelEndpoint = 'gpt-4-0125-preview';
+    } else {
+        alert('Invalid model selected!');
         return;
     }
 
@@ -150,7 +168,7 @@ function sum() {
         const fileContents = e.target.result;
 
         try {
-        callFlaskEndpoint('facebook/bart-large-cnn', fileContents);
+            callFlaskEndpoint(modelEndpoint, fileContents);
         } catch (error) {
             alert('Error parsing JSON: ' + error.message);
         }
@@ -162,8 +180,8 @@ function sum() {
 
     // Read the file as text
     reader.readAsText(file);
-    //alert('Please select a file first!'); 
 }
+
 
 async function callFlaskEndpoint(llm, prompt) {
   const url = 'https://group29.api.sprinty.tech/prompt'
@@ -177,7 +195,8 @@ async function callFlaskEndpoint(llm, prompt) {
       },
       body: JSON.stringify(data),
     });
-    
+
+    console.log(response)
     if (!response.ok) {
         throw new Error('Network response was not ok ' + response.statusText);
     }

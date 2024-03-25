@@ -3,8 +3,12 @@ from huggingfaceAPI import queryLLM
 from flask_cors import cross_origin
 from mongoDB import getAllReviews, addReview
 from werkzeug.exceptions import BadRequest
+from dotenv import load_dotenv
+import os
+from langchainCode import langchain_call
 
 app = Flask(__name__)
+load_dotenv()
 
 def analyze_llm(llm, prompt):               #not sure what our actual llm analysis code is, wrote llm
     summary = f"Summary from {llm}: {prompt}"
@@ -23,7 +27,11 @@ def handle_prompt():
         if not llm or not prompt:
             raise ValueError("Both 'llm' and 'prompt' are required in the request body.")
 
-        summary = queryLLM(llm, prompt) #performance analysis
+        if llm.startswith("gpt"):
+            key = os.getenv("OPENAI_KEY")
+            summary = langchain_call(key, llm, prompt)  # Use the modified langchain_call for specific LLMs
+        else:
+            summary = queryLLM(llm, prompt) #performance analysis
         result = {"success": True, "summary": summary}
         return jsonify(result)    #returning the analysis
 
