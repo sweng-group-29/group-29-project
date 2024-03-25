@@ -1,7 +1,9 @@
 import openai
-
+from dotenv import load_dotenv
+import os
+load_dotenv()
 # OpenAI API key
-api_key = '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'
+api_key = os.getenv("OPENAI_KEY")
 openai.api_key = api_key
 
 # Function to read text from a file
