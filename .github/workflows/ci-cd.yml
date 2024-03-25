@@ -27,8 +27,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Create .env file
-        run: echo API_KEY=${{ secrets.API_KEY }} > ./backend/.env
+        - name: Create .env file
+          run: |
+            echo API_KEY=${{ secrets.API_KEY }} > ./backend/.env
+            echo OPENAI_KEY=${{ secrets.OPENAI_KEY }} > ./backend/.env
+            echo MONGODB_USERNAME=${{ secrets.MONGODB_USERNAME }} > ./backend/.env
+            echo MONGODB_PASSWORD=${{ secrets.MONGODB_PASSWORD }} > ./backend/.env
 
       - name: Build and push Docker image for multi-platform
         uses: docker/build-push-action@v2
