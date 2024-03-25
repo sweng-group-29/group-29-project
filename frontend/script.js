@@ -51,7 +51,7 @@ window.onload = function () {
         // Check if the email is valid
         if (validateEmail(email)) {
             // If the email is valid, redirect to the LLM page
-            window.location.href = 'llm.html';  // Replace with the actual URL of the LLM page
+            window.location.href = 'llm.html';
         } else {
             // If the email is not valid, show an error message
             alert('Please enter a valid email address.');
@@ -229,34 +229,3 @@ async function callFlaskEndpoint(llm, prompt) {
 // Stats Screen
 // --------------------------------- //
 
-fetch('http://localhost:5000/get-reviews')  // Replace with the actual URL of your Flask app
-    .then(response => response.json())
-    .then(reviews => {
-        var reviewsContainer = document.querySelector('.reviews-container');
-        reviewsContainer.innerHTML = '';  // Clear the current reviews
-
-        // Add a new grid item for each review
-        for (var i = 0; i < reviews.length; i++) {
-            var reviewElement = document.createElement('div');
-            reviewElement.className = 'review';
-
-            var llm = document.createElement('h2');
-            llm.textContent = reviews[i].llm;
-            reviewElement.appendChild(llm);
-
-            var rating = document.createElement('p');
-            rating.textContent = 'Rating: ' + reviews[i].rating;
-            reviewElement.appendChild(rating);
-
-            var review = document.createElement('p');
-            review.textContent = reviews[i].review;
-            reviewElement.appendChild(review);
-
-            reviewsContainer.appendChild(reviewElement);
-        }
-    })
-    .catch(error => console.error('Error:', error));
-
-var date = document.createElement('p');
-date.textContent = 'Date: ' + reviews[i].date;
-reviewElement.appendChild(date);

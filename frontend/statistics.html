@@ -13,14 +13,62 @@
     <div class="content">
         <header>
             <h1>Statistics</h1>
+            <h4 class="subheading">Here you can see the statistics of the summarisers</h4>
         </header>
-    </div>
 
-    <div class="reviews-container">
-        <!-- The reviews will be added here by the JavaScript code -->
-    </div>
+        <div class="dropdown">
+            <select id="llm-select">
+                <option value="all">All</option>
+                <option value="llm1">LLM 1</option>
+                <option value="llm2">LLM 2</option>
+                <option value="llm3">LLM 3</option>
+            </select>
+        </div>
 
-    
+        <div class="stats-grid">
+            <div id="total-requests"><h3>Total Requests:</h3> <span>14</span></div>
+            <div id="ratings-graph"><h3>Ratings Graph:</h3>
+                <div class="chart">
+                  <div class="part percent-50">
+                    <div class="label">5 Stars</div>
+                    <div class="bar green">aw
+                      <div class="label">50%</div>
+                    </div>
+                  </div>
+                  <div class="part percent-20">
+                    <div class="label">4 Stars</div>
+                    <div class="bar lime">aw
+                      <div class="label">20%</div>
+                    </div>
+                  </div>
+                  <div class="part percent-5">
+                    <div class="label">3 Stars</div>
+                    <div class="bar yellow">aw
+                      <div class="label">5%  </div>
+                    </div>
+                  </div>
+                  <div class="part percent-5">
+                    <div class="label">2 Stars</div>
+                    <div class="bar orange">aw
+                      <div class="label">5%</div>
+                    </div>
+                  </div>
+                  <div class="part percent-20">
+                    <div class="label">1 Star</div>
+                    <div class="bar red">aw
+                      <div class="label">20%</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div id="avg-words"><h3>Average Words Summarized:</h3> <span>316</span></div>
+            <div id="avg-summary-length"><h3>Average Summary Length:</h3> <span>102</span></div>
+            <div id="avg-accuracy"><h3>Average Accuracy:</h3> <span>74%</span></div>
+            <div id="avg-response-time"><h3>Average Response Time:</h3> <span>34 sec</span></div>
+        </div>
+
+        
+    </div>
 
     <script src="script.js"></script>
 </body>
