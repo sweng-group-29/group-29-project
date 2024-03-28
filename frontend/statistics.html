@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistics</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+      window.onload = function() {
+          fetch('/reviews')
+              .then(response => response.json())
+              .then(data => {
+                  const ul = document.getElementById('reviews');
+                  data.forEach(review => {
+                      const li = document.createElement('li');
+                      li.textContent = JSON.stringify(review);  // Adjust this line to display the review data as you want
+                      ul.appendChild(li);
+                  });
+              });
+      };
+    </script>
 </head>
 <body>
     <!-- Sidebar-->
@@ -15,7 +29,7 @@
             <h1>Statistics</h1>
             <h4 class="subheading">Here you can see the statistics of the summarisers</h4>
         </header>
-
+        <ul id="reviews"></ul>
         <div class="dropdown">
             <select id="llm-select">
                 <option value="all">All</option>
