@@ -14,3 +14,8 @@ flask_cors
 pytest
 gunicorn
 pymongo
+openai
+langchain
+langchain_community
+langchain-openai
+bs4
