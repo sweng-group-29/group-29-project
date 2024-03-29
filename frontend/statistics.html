@@ -6,17 +6,39 @@
     <title>Statistics</title>
     <link rel="stylesheet" href="styles.css">
     <script>
-      window.onload = function() {
-          fetch('/reviews')
-              .then(response => response.json())
-              .then(data => {
-                  const ul = document.getElementById('reviews');
-                  data.forEach(review => {
-                      const li = document.createElement('li');
-                      li.textContent = JSON.stringify(review);  // Adjust this line to display the review data as you want
-                      ul.appendChild(li);
-                  });
-              });
+      onload = () => {
+        fetch('components/sidebar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('sidebar').innerHTML = data;
+
+            // Add the event listener after the sidebar is loaded
+            document.getElementById('nav-toggle').addEventListener('change', function() {
+                if(this.checked) {
+                    document.body.classList.remove('sidebar-open');
+                } else {
+                    document.body.classList.add('sidebar-open');
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+        fetch('/reviews')
+          .then(response => response.json())
+          .then(reviews => {
+              const reviewsDiv = document.getElementById('reviews');
+              for (const review of reviews) {
+                  const reviewDiv = document.createElement('div');
+                  reviewDiv.innerHTML = `
+                      <h2>${review.llm}</h2>
+                      <p>${review.rating}</p>
+                      <p>${review.review}</p>
+                  `;
+                  reviewsDiv.appendChild(reviewDiv);
+              }
+          });
       };
     </script>
 </head>
@@ -29,9 +51,7 @@
             <h1>Statistics</h1>
             <h4 class="subheading">Here you can see the statistics of the summarisers</h4>
         </header>
-        <ul id="reviews">
-            <!-- Reviews will be displayed here -->    
-        </ul>
+        <div id="reviews"></div>
         <div class="dropdown">
             <select id="llm-select">
                 <option value="all">All</option>
@@ -87,6 +107,5 @@
         
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
