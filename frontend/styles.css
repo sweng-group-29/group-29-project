@@ -1095,3 +1095,10 @@ label {
   align-items: center;
   flex-direction: column;
 }
+
+.review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
