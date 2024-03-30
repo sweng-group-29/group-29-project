@@ -39,28 +39,69 @@
 
         fetchReviews('all');
       };
+      
+    let chart;  // Global variable to hold the chart instance
+
     async function fetchReviews(llm) {
-        const url = 'http://localhost:5000/reviews';
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error reviews! status: ${response.status}`);
+      const url = 'http://localhost:5000/reviews';
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error reviews! status: ${response.status}`);
+      }
+      let reviews = await response.json();
+      if (llm !== 'all') {
+        reviews = reviews.filter(review => review.llm === llm);
+      }
+      const count = reviews.length;
+      const averageRating = reviews.reduce((sum, review) => sum + Number(review.rating), 0) / count;
+      
+      const reviewsDiv = document.getElementById('reviews');
+      reviewsDiv.innerHTML = `
+        <div class="stat-box">
+          <span>Count: ${count}</span>
+        </div>
+        <div class="stat-box">
+          <canvas id="chart"></canvas>
+        </div>
+        <div class="stat-box">
+          <span>Average Rating: ${averageRating.toFixed(2)}</span>
+        </div>
+      `;
+
+      // Count the number of 1-5 ratings
+      const ratingCounts = [0, 0, 0, 0, 0];
+      for (const review of reviews) {
+        const rating = Math.round(Number(review.rating));
+        if (rating >= 1 && rating <= 5) {
+          ratingCounts[rating - 1]++;
         }
-        let reviews = await response.json();
-        if (llm !== 'all') {
-            reviews = reviews.filter(review => review.llm === llm);
+      }
+
+      // Update the chart
+      const ctx = document.getElementById('chart').getContext('2d');
+      if (chart) {
+        chart.destroy();  // Destroy the previous chart instance if it exists
+      }
+      chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['1', '2', '3', '4', '5'],
+          datasets: [{
+            label: 'Number of Ratings',
+            data: ratingCounts,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
         }
-        const count = reviews.length;
-        const averageRating = reviews.reduce((sum, review) => sum + Number(review.rating), 0) / count;
-        
-        const reviewsDiv = document.getElementById('reviews');
-        reviewsDiv.innerHTML = `
-            <div class="stat-box">
-                <span>Count: ${count}</span>
-            </div>
-            <div class="stat-box">
-                <span>Average Rating: ${averageRating.toFixed(2)}</span>
-            </div>
-        `;
+      });
     }
       
     </script>
@@ -91,6 +132,6 @@
 
         
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
