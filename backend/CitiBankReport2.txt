@@ -1,0 +1,396 @@
+MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION
+AND RESULTS OF OPERATIONS
+EXECUTIVE SUMMARY
+As described further throughout this Executive Summary, Citi
+demonstrated continued progress across the franchise during
+2022:
+• Citi’s revenues increased 5% versus the prior year,
+including net gains on sales of Citi’s Philippines and
+Thailand consumer banking businesses versus a loss on
+sale of Citi’s Australia consumer banking business in the
+prior year. Excluding these divestiture-related impacts
+(see “2022 Results Summary” below), revenues increased
+3%, driven by higher net interest income, partially offset
+by lower non-interest revenues.
+• Citi’s expenses increased 6% versus the prior year,
+including divestiture-related impacts in both the current
+and prior years. Excluding these divestiture-related
+impacts (see “2022 Results Summary” below), expenses
+increased 8%, driven by continued investments in Citi’s
+transformation, business-led investments and volumerelated expenses, as well as other risk and control
+investments and inflation, all partially offset by
+productivity savings, the impact of foreign exchange
+translation and the expense reduction from the closure of
+five exit markets (see also “Expenses” below).
+• Citi’s cost of credit was $5.2 billion, versus $(3.8) billion
+in the prior year, largely reflecting a net build of $1.2
+billion in the allowance for credit losses (ACL) for loans
+and unfunded commitments, primarily due to consumer
+loan growth and a deterioration in macroeconomic
+assumptions, compared to a net ACL release of $8.8
+billion in the prior year.
+• Citi returned $7.3 billion to common shareholders in the
+form of dividends and share repurchases.
+• Citi’s Common Equity Tier 1 (CET1) Capital ratio
+increased to 13.0% as of December 31, 2022, compared to
+12.2% as of December 31, 2021 (for additional
+information, see “Capital Resources” below). Citi’s
+required regulatory CET1 Capital ratio was 12.0% as of
+January 1, 2023, under the Basel III Standardized
+Approach.
+• Citi made substantial progress on its consumer banking
+business divestitures in 2022, closing sales in five exit
+markets and working toward closing four additional sale
+transactions, as well as progressing with the ongoing
+wind-downs of the Korea consumer banking business and
+Russia consumer, local commercial and institutional
+businesses.
+2022 Results Summary
+Citigroup
+Citigroup reported net income of $14.8 billion, or $7.00 per
+share, compared to net income of $22.0 billion, or $10.14 per
+share in the prior year. The decrease in net income was
+primarily driven by the higher cost of credit, resulting from
+loan growth in Personal Banking and Wealth Management
+(PBWM) and a deterioration in macroeconomic assumptions,
+and the higher operating expenses, partially offset by the
+higher revenues. Citigroup’s effective tax rate was 19.4% in
+the current year versus 19.8% in the prior year. Earnings per
+share (EPS) decreased 31%, reflecting the decrease in net
+income, partially offset by a 4% decline in average diluted
+shares outstanding.
+As discussed above, results for 2022 included divestiturerelated impacts of approximately $(184) million in after-tax
+earnings, substantially all of which were recorded in Legacy
+Franchises (for additional information, see discussion below).
+Collectively, divestiture-related impacts had a $0.09 negative
+impact on EPS. This compares to divestiture-related negative
+impacts on EPS of $0.80 in 2021. (As used throughout this
+Form 10-K, Citi’s results of operations and financial condition
+excluding the divestiture-related impacts are non-GAAP
+financial measures. Citi believes the presentation of its results
+of operations and financial condition excluding the divestiturerelated impacts described above provides a meaningful
+depiction of the underlying fundamentals of its broader results
+and Legacy Franchises’ results for investors, industry analysts
+and others.)
+Results for 2022 included pretax divestiture-related
+impacts of approximately $82 million (approximately $(184)
+million after-tax), substantially all of which were recorded in
+Legacy Franchises, primarily consisting of the following:
+• Approximately $618 million Philippines gain on sale
+recorded in revenues
+• Approximately $209 million Thailand gain on sale
+recorded in revenues
+• Approximately $(64) million incremental Australia
+consumer business loss on sale recorded in revenues
+• Approximately $535 million goodwill impairment
+recorded in expenses due to re-segmentation and timing
+of divestitures
+• Approximately $161 million of aggregate divestiturerelated costs
+Results for 2021 included pretax divestiture-related
+impacts of $(1.9) billion (approximately $(1.6) billion aftertax) in Legacy Franchises, which primarily consisted of the
+following:
+• Approximately $(694) million Australia loss on sale
+recorded in revenues
+• Approximately $1.1 billion related to charges incurred
+from the voluntary early retirement program (VERP) in
+connection with the wind-down of the Korea consumer
+banking business recorded in expenses
+• Contract modification costs related to the Asia
+divestitures of $119 million
+Citigroup revenues of $75.3 billion increased 5% versus
+the prior year. Excluding the divestiture-related impacts,
+revenues were up 3%, as the impact of higher interest rates
+across businesses and strong loan growth in PBWM were
+partially offset by declines in Banking in Institutional Clients
+3
+Group (ICG) and Asia investment product revenue in Global
+Wealth Management (Global Wealth), as well as the reduction
+in revenues from the closure of five exit markets and ongoing
+wind-downs.
+Citigroup’s end-of-period loans were $657 billion, down
+2% versus the prior year, largely driven by Legacy Franchises
+and the impact of foreign exchange translation. The decline in
+Legacy Franchises primarily reflected the reclassification of
+loans to Other assets to reflect held-for-sale (HFS) accounting,
+as a result of the signing of sale agreements for consumer
+banking businesses in Asia Consumer Banking (Asia
+Consumer), as well as the impact of the ongoing Korea and
+Russia wind-downs.
+Citigroup’s end-of-period deposits were $1.4 trillion, up
+4% versus the prior year, largely driven by Treasury and trade
+solutions in ICG, partially offset by the impact of foreign
+exchange translation.
+Expenses
+Citigroup’s operating expenses of $51.3 billion increased 6%
+in 2022. Reported expenses included divestiture-related
+impacts of approximately $696 million in the current year and
+approximately $1.2 billion in the prior year, substantially all of
+which were recorded in Legacy Franchises. Excluding these
+divestiture-related impacts, expenses increased 8% versus the
+prior year, largely driven by the following:
+• Approximately 2% by transformation investments, with
+about two-thirds related to the risk, controls, data and
+finance programs (approximately 25% of the program
+investments were related to technology).
+• Approximately 1% by business-led investments, as Citi
+continues to hire commercial and investment bankers, as
+well as client advisors in Global Wealth, and continues to
+invest in client experience, front-office platforms and
+onboarding.
+• Approximately 1% by higher volume-related expenses
+across both PBWM and ICG.
+• Approximately 3% by other risk and control investments
+and inflation, partially offset by a Revlon-related wire
+transfer recovery, productivity savings, the impact of
+foreign exchange translation and the expense reduction
+from the exit markets.
+Citi expects to incur higher expenses in 2023, primarily
+driven by transformation-related investments, volume-related
+expenses and inflation-related impacts.
+Cost of Credit
+Citi’s total provisions for credit losses and for benefits and
+claims was a cost of $5.2 billion, compared to a benefit of $3.8
+billion in the prior year. Results in 2022 included net credit
+losses of $3.8 billion versus $4.9 billion in the prior year. The
+higher cost of credit was driven by the net build of $1.2 billion
+in the ACL for loans and unfunded commitments, compared to
+a net ACL release of $8.8 billion in the prior year, partially
+offset by the lower net credit losses. The net ACL build was
+primarily due to cards loan growth in PBWM and a
+deterioration in macroeconomic assumptions. For additional
+information on Citi’s ACL, see “Significant Accounting
+Policies and Significant Estimates—Citi’s Allowance for
+Credit Losses (ACL)” below.
+Net credit losses of $3.8 billion decreased 23% from the
+prior year, largely driven by lower consumer net credit losses.
+Consumer net credit losses decreased 20% to $3.6 billion,
+reflecting low loss rates in the first half of 2022, followed by
+the ongoing normalization of losses toward pre-pandemic
+levels, particularly in Retail services cards business in PBWM.
+Corporate net credit losses decreased 54% to $178 million,
+largely driven by improvements in portfolio credit quality.
+Citi expects to incur higher net credit losses in 2023,
+primarily driven by continued normalization toward prepandemic levels, particularly in the cards business in PBWM.
+For additional information on Citi’s consumer and
+corporate credit costs, see each respective business’s results of
+operations and “Credit Risk” below.
+Capital
+Citigroup’s CET1 Capital ratio was 13.0% as of December
+31, 2022, compared to 12.2% as of December 31, 2021, based
+on the Basel III Standardized Approach for determining riskweighted assets (RWA). The increase was primarily driven by
+net income, impacts from the closing of the Australia,
+Philippines and other Asia consumer banking business sales
+and business actions to reduce RWA, partially offset by the
+return of capital to common shareholders and interest rate
+impacts on Citigroup’s investment portfolio. The increase in
+Citi’s CET1 Capital ratio was also partially offset by the
+impact of adopting the Standardized Approach for
+Counterparty Credit Risk (SA-CCR) on January 1, 2022.
+Citigroup’s Supplementary Leverage ratio as of
+December 31, 2022 was 5.8%, compared to 5.7% as of
+December 31, 2021. The increase was driven by a decrease in
+Total Leverage Exposure, partly offset by lower Tier 1
+Capital. For additional information on Citi’s capital ratios and
+related components, see “Capital Resources” below.
+Citi has continued to pause common share repurchases in
+order to absorb any temporary capital impacts related to any
+potential signing of a sale agreement for its Mexico Consumer
+and Small Business and Middle-Market Banking (Mexico
+Consumer/SBMM) business (for additional information, see
+“Macroeconomic and Other Risks and Uncertainties” and the
+capital return risk factor in “Risk Factors” below) and to
+continue to have ample capital to serve its clients.
+Institutional Clients Group
+ICG net income of $10.7 billion decreased 25%, driven by a
+net ACL release in the prior year, versus a net ACL build in
+the current year, and higher expenses, partially offset by
+higher revenues. ICG operating expenses of $26.3 billion
+increased 10%, primarily driven by continued investment in
+Citi’s transformation, business-led investments and volumerelated expenses, partially offset by a Revlon-related wire
+transfer recovery, the impact of foreign exchange translation
+and productivity savings.
+ICG revenues of $41.2 billion increased 3% (including
+losses on loan hedges), as revenue growth in Services and
+Markets was partially offset by lower revenues in Banking.
+Results included a gain on loan hedges of $307 million,
+4
+compared with a loss on loan hedges of $140 million in the
+prior year.
+Services revenues of $16.0 billion increased 27%.
+Treasury and trade solutions (TTS) revenues of $12.2 billion
+increased 32%, driven by 46% growth in net interest income
+and 10% growth in non-interest revenue. The strong
+performance in TTS was driven by the benefit of higher
+interest rates, as well as business actions, including balance
+sheet optimization and managing deposit pricing, deepening of
+relationships with existing clients and an increase in new
+clients across segments. Securities services revenues of $3.9
+billion increased 15%, as net interest income increased 59%,
+driven by higher interest rates across currencies, as well as the
+impact of foreign exchange translation, partially offset by a
+1% decrease in non-interest revenue due to the impact of
+lower global financial markets.
+Markets revenues of $19.1 billion increased 7% versus the
+prior year, largely driven by Fixed income markets, partially
+offset by lower client activity levels in Equity markets, as well
+as business actions to reduce RWA. Fixed income markets
+revenues of $14.6 billion increased 13%, driven by strength in
+rates and currencies. Equity markets revenues of $4.6 billion
+were down 9%, largely reflecting reduced client activity in
+equity derivatives versus the prior year.
+Banking revenues of $6.1 billion decreased 35%,
+including the gain on loan hedges in the current year and loss
+on loan hedges in the prior year. Excluding the gain and loss
+on loan hedges, Banking revenues of $5.8 billion decreased
+39%, driven by lower revenues in Investment banking and
+Corporate lending. Investment banking revenues of $3.1
+billion decreased 53%, as heightened macroeconomic
+uncertainty and volatility continued to impact client activity.
+Excluding the gain and loss on loan hedges, Corporate lending
+revenues decreased 8% versus the prior year, driven by the
+impact of foreign currency translation, higher cost of funds
+and higher hedging costs.
+For additional information on the results of operations of
+ICG in 2022, see “Institutional Clients Group” below.
+Personal Banking and Wealth Management
+PBWM net income of $3.3 billion decreased 57% versus the
+prior year, largely driven by a net ACL release in the prior
+year versus a net ACL build in the current year, as well as
+higher expenses. PBWM operating expenses of $16.3 billion
+increased 11%, primarily driven by continued investments in
+Citi’s transformation, other risk and control initiatives,
+volume-related expenses and business-led investments,
+partially offset by productivity savings.
+PBWM revenues of $24.2 billion increased 4% versus the
+prior year, as net interest income growth, driven by strong loan
+growth across Branded cards and Retail services and higher
+interest rates, was partially offset by a decline in non-interest
+revenue, driven by lower investment product revenue in
+Global Wealth and higher partner payments in Retail services.
+U.S. Personal Banking revenues of $16.8 billion increased
+7% versus the prior year. Branded cards revenues of $8.9
+billion increased 9%, driven by higher net interest income. In
+Branded cards, new account acquisitions increased 11%, card
+spend volumes increased 16% and average loans increased
+11%. Retail services revenues of $5.5 billion increased 7%,
+driven by higher net interest income, partially offset by higher
+partner payments. Retail banking revenues of $2.5 billion were
+largely unchanged versus the prior year, as higher interest
+income and modest deposit growth were offset by lower
+mortgage revenues due to fewer mortgage originations.
+Global Wealth revenues of $7.4 billion decreased 2%
+versus the prior year, as investment product revenue
+headwinds, particularly in Asia, more than offset net interest
+income growth from higher interest rates and higher loan and
+deposit volumes.
+For additional information on the results of operations of
+PBWM in 2022, see “Personal Banking and Wealth
+Management” below.
+Legacy Franchises
+Legacy Franchises net loss of $12 million compared to net
+income of $1 million in the prior year, primarily driven by
+higher cost of credit, partially offset by lower expenses and
+higher revenues, primarily reflecting the Philippines and
+Thailand gains on sales in the current year and the Australia
+loss on sale in the prior year. Legacy Franchises expenses of
+$7.8 billion decreased 6%, largely driven by the absence of the
+Korea VERP charge in the prior year and the benefit from
+closing the five exit markets, partially offset by the $535
+million goodwill impairment, an approximate $70 million
+impairment of long-lived assets related to the Russia consumer
+banking business and $156 million of other aggregate
+divestiture-related costs.
+Legacy Franchises revenues of $8.5 billion increased 3%
+versus the prior year, primarily driven by the Philippines and
+Thailand gains on sale versus the Australia loss on sale in the
+prior year. Excluding these divestiture-related impacts,
+revenues decreased 15%, primarily driven by the reduction in
+revenues from the closings of the five exit markets, as well as
+the impact of the ongoing Korea and Russia wind-downs.
+For additional information on the results of operations of
+Legacy Franchises in 2022, see “Legacy Franchises” below.
+Corporate/Other
+Corporate/Other net income was $879 million, compared to a
+net loss of $8 million in the prior year, reflecting higher
+revenue and lower expenses, partially offset by lower income
+tax benefits, as well as the second quarter of 2022 release of a
+CTA (cumulative translation adjustment) loss (net of hedges)
+from Accumulated other comprehensive income (loss) (AOCI)
+related to the substantial liquidation of a legacy U.K.
+consumer operation, recorded in discontinued operations.
+Corporate/Other operating expenses of $953 million
+decreased 31%, primarily driven by lower consulting expenses
+and the impact of certain legal settlements.
+Corporate/Other revenues of $1.4 billion increased from
+$0.5 billion in the prior year, driven by higher net interest
+income, primarily from the investment portfolio, partially
+offset by lower non-interest revenue, primarily due to the
+absence of mark-to-market gains in the prior year as well as
+higher hedging costs.
+For additional information on the results of operations of
+Corporate/Other in 2022, see “Corporate/Other” below.
+5
+Macroeconomic and Other Risks and Uncertainties
+Various geopolitical and macroeconomic challenges and
+uncertainties continue to adversely impact economic
+conditions in the U.S. and globally. The U.S. and other
+countries have continued to experience significantly elevated
+levels of inflation, resulting in central banks implementing a
+series of interest rates increases, with additional increases
+expected in the near term. In addition to causing a
+humanitarian crisis, the war in Ukraine continues to disrupt
+energy and food markets. An economic rebound in China
+remains uncertain, due to the ongoing impacts from
+COVID-19, the amount of leverage in its economy and stress
+in the property sector. These and other factors have adversely
+affected financial markets, negatively impacted global
+economic growth rates, contributed to lower consumer
+confidence and increased the risk of recession in Europe, the
+U.S. and other countries. These and other factors could
+adversely affect Citi’s customers, clients, businesses, funding
+costs, expenses and results during 2023.
+In addition, Citi could incur a significant loss on sale in
+2023, due to CTA losses (net of hedges) in AOCI, goodwill
+write-offs and other AOCI loss components, related to the
+potential signing of a sale agreement for any of its remaining
+consumer banking divestitures. The majority of these losses
+would be regulatory capital neutral at closing.
+For a further discussion of trends, uncertainties and risks
+that will or could impact Citi’s businesses, results of
+operations, capital and other financial condition during 2023,
+see “2022 Results Summary” above and “Risk Factors,” each
+respective business’s results of operations and “Managing
+Global Risk,” including “Managing Global Risk—Other Risks
+—Country Risk—Russia,” below.
+CITI’S CONSENT ORDER COMPLIANCE
+Citi has embarked on a multiyear transformation, with the
+target outcome to change Citi’s business and operating models
+such that they simultaneously strengthen risk and controls and
+improve Citi’s value to customers, clients and shareholders.
+This includes efforts to effectively implement the October
+2020 Federal Reserve Board (FRB) and Office of the
+Comptroller of the Currency (OCC) consent orders issued to
+Citigroup and Citibank, respectively. In the second quarter of
+2021, Citi made an initial submission to the OCC, and
+submitted its plans to address the consent orders to both
+regulators during the third quarter of 2021. Citi continues to
+work constructively with the regulators and provides to both
+regulators on an ongoing basis additional information
+regarding its plans and progress. Citi will continue to reflect
+their feedback in its project plans and execution efforts.
+As discussed above, Citi’s efforts include continued
+investments in its transformation, including the remediation of
+its consent orders. Citi’s CEO has made the strengthening of
+Citi’s risk and control environment a strategic priority and has
+established a Chief Administrative Officer organization to
+centralize program management. In addition, the Citigroup
+and Citibank Boards of Directors each formed a
+Transformation Oversight Committee, an ad hoc committee of
+each Board, to provide oversight of management’s
+remediation efforts under the consent orders. The Citi Board
+of Directors has determined that Citi’s plans are responsive to
+the Company’s objectives and that progress continues to be
+made on execution of the plans.
+For additional information about the consent orders, see
+“Risk Factors—Compliance Risks” below and Citi’s Current
+Report on Form 8-K filed with the SEC on October 7, 2020. 
