@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistics</title>
+    <title>Reviews</title>
     <link rel="icon" type="image/x-icon" href="/frontend/assets/images/citi.png">
     <link rel="stylesheet" href="styles.css">
     <script>
@@ -39,29 +39,28 @@
 
         fetchReviews('all');
       };
-    async function fetchReviews(llm) {
+      async function fetchReviews(llm) {
         const url = 'http://localhost:5000/reviews';
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error(`HTTP error reviews! status: ${response.status}`);
+          throw new Error(`HTTP error reviews! status: ${response.status}`);
         }
         let reviews = await response.json();
         if (llm !== 'all') {
-            reviews = reviews.filter(review => review.llm === llm);
+          reviews = reviews.filter(review => review.llm === llm);
         }
-        const count = reviews.length;
-        const averageRating = reviews.reduce((sum, review) => sum + Number(review.rating), 0) / count;
-        
         const reviewsDiv = document.getElementById('reviews');
-        reviewsDiv.innerHTML = `
-            <div class="stat-box">
-                <span>Count: ${count}</span>
-            </div>
-            <div class="stat-box">
-                <span>Average Rating: ${averageRating.toFixed(2)}</span>
-            </div>
-        `;
-    }
+        reviewsDiv.innerHTML = ''; // Clear the existing reviews
+        for (const review of reviews) {
+          const reviewDiv = document.createElement('div');
+          reviewDiv.innerHTML = `
+            <h2>${review.llm}</h2>
+            <p>${review.rating}</p>
+            <p>${review.review}</p>
+          `;
+          reviewsDiv.appendChild(reviewDiv);
+        }
+      }
       
     </script>
 </head>
@@ -71,17 +70,17 @@
     
     <div class="content">
         <header>
-            <h1>Statistics</h1>
-            <h4 class="subheading">Here you can see the statistics of the summarisers</h4>
+            <h1>Reviews</h1>
+            <h4 class="subheading">Here you can see and filter all reviews</h4>
         </header>
 
         <div class="dropdown">
             <select id="llm-select">
                 <option value="all">All</option>
                 <option value="BART">BART</option>
-                <option value="gpt3">GPT-3.5</option>
-                <option value="gpt4">GPT 4</option>
-                <option value="googlepeg">Google Pegasus</option>
+                <option value="GPT-3.5">GPT-3.5</option>
+                <option value="GPT 4">GPT 4</option>
+                <option value="Google Pegasus">Google Pegasus</option>
             </select>
         </div>
 
