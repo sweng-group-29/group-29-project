@@ -4,11 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistics</title>
+    <link rel="icon" type="image/x-icon" href="/frontend/assets/images/citi.png">
     <link rel="stylesheet" href="styles.css">
     <script>
-      onload = () => {
+      onload = async () => {
+        fetch('http://localhost:5000/reviews?')
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error(`HTTP error reviews! status: ${response.status}`);
+              }
+              return response.json();
+          })
+          .then(reviews => {
+            console.log(reviews); // Check the console to see the reviews
+              const reviewsDiv = document.getElementById('reviews');
+              for (const review of reviews) {
+                  const reviewDiv = document.createElement('div');
+                  reviewDiv.innerHTML = `
+                      <h2>${review.llm}</h2>
+                      <p>${review.rating}</p>
+                      <p>${review.review}</p>
+                  `;
+                  reviewsDiv.appendChild(reviewDiv);
+              }
+          })
+          .catch(error => console.error('Error:', error));
+
         fetch('components/sidebar.html')
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error sidebar! status: ${response.status}`);
+            }
+            return response.text();
+        })
         .then(data => {
             document.getElementById('sidebar').innerHTML = data;
 
@@ -25,20 +53,7 @@
             console.error('Error:', error);
         });
 
-        fetch('/reviews')
-          .then(response => response.json())
-          .then(reviews => {
-              const reviewsDiv = document.getElementById('reviews');
-              for (const review of reviews) {
-                  const reviewDiv = document.createElement('div');
-                  reviewDiv.innerHTML = `
-                      <h2>${review.llm}</h2>
-                      <p>${review.rating}</p>
-                      <p>${review.review}</p>
-                  `;
-                  reviewsDiv.appendChild(reviewDiv);
-              }
-          });
+
       };
     </script>
 </head>
