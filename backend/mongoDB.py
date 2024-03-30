@@ -29,7 +29,12 @@ def addReview(llm, rating, review):
 
 # Get a cursor to all reviews in database
 def getAllReviews():
-    return collection.find({}, {"_id":0})
+    cursor = collection.find()
+    reviews = []
+    for review in cursor:
+        review['_id'] = str(review['_id'])  # Convert ObjectId to string
+        reviews.append(review)
+    return reviews
 
 if __name__ == "__main__":
     #addReview("ChatGPT", 4, "This AI is great for my financial summarization!")

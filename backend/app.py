@@ -1,13 +1,17 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from huggingfaceAPI import queryLLM
-from flask_cors import cross_origin
+from flask_cors import cross_origin, CORS
 from mongoDB import getAllReviews, addReview
 from werkzeug.exceptions import BadRequest
 from dotenv import load_dotenv
 import os
 from langchainCode import langchain_call
 
-app = Flask(__name__)
+# Get the path to the directory of this file
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+app = Flask(__name__, template_folder=os.path.join(basedir, '../frontend'))
+CORS(app)
 load_dotenv()
 
 def analyze_llm(llm, prompt):               #not sure what our actual llm analysis code is, wrote llm
@@ -50,7 +54,7 @@ def handle_prompt():
 def ratings():
     if request.method == 'GET':
         reviews = getAllReviews()
-        return list(reviews)
+        return jsonify(reviews)
     
     elif request.method == 'POST':
         llm = request.form.get('llm')
@@ -58,6 +62,12 @@ def ratings():
         review = request.form.get('review')
         addReview(llm, rating, review)
         return jsonify({'ReviewMessage': 'Review has been added'})
+    
+@app.route('/statistics')
+def statistics():
+    reviews = getAllReviews() 
+    return send_from_directory('../../frontend', 'statistics.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
