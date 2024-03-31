@@ -57,11 +57,15 @@ def ratings():
         return jsonify(reviews)
     
     elif request.method == 'POST':
-        llm = request.form.get('llm')
-        rating = request.form.get('rating') 
-        review = request.form.get('review')
-        addReview(llm, rating, review)
-        return jsonify({'ReviewMessage': 'Review has been added'})
+        data = request.get_json()
+        if data:
+            llm = data.get('llm')
+            rating = data.get('rating')
+            review = data.get('review')
+            addReview(llm, rating, review)
+            return jsonify({'ReviewMessage': 'Review has been added'})
+        else:
+            return jsonify({'error': 'No JSON data received'}), 400
     
 @app.route('/statistics')
 def statistics():

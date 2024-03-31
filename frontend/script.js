@@ -244,6 +244,55 @@ async function callFlaskEndpoint(llm, prompt) {
   }
 }
 
+document.getElementById("submitReviewButton").addEventListener("click", function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    var rating = document.querySelector('input[name="rating"]:checked');
+    var comment = document.getElementById("userComment").value;
+
+    // Ensure both rating and comment are provided
+    if (!rating || !comment) {
+        alert("Please provide both a rating and a comment.");
+        return;
+    }
+
+    // Mapping for language model values
+    var modelMapping = {
+        "BART": "BART",
+        "gpt3": "GPT-3.5",
+        "gpt4": "GPT 4",
+        "googlepeg": "Google Pegasus"
+        // Add more mappings as needed
+    };
+
+    // Prepare data to send to backend
+    var reviewData = {
+        llm: modelMapping[document.getElementById("languageModel").value],
+        rating: rating.value,
+        review: comment
+    };
+
+    // Send review data to backend
+    fetch('http://127.0.0.1:5000/reviews', { // Update the URL here
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reviewData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.ReviewMessage);
+        fetchReviews(llm);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+
+
 // --------------------------------- //
 // Stats Screen
 // --------------------------------- //

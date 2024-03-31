@@ -255,14 +255,6 @@ label {
     margin-top: 10px;
 }
 
-/*-----------------------------------*\
-  # RATINGS
-\*-----------------------------------*/
-
-#userRating {
-    display: none;
-}
-
 
 /*-----------------------------------*\
   #SIDEBAR NEW
@@ -1102,3 +1094,65 @@ label {
     justify-content: center;
     text-align: left;
 }
+
+/* Styling for user comment */
+#user-comment {
+  margin-top: 20px;
+}
+
+#user-comment label {
+  font-weight: bold;
+}
+
+#user-comment textarea {
+  border: 3px dotted #004685;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 100%;
+  resize: vertical;
+}
+
+/* Styling for user rating */
+#userRating {
+  margin-top: 20px;
+}
+
+#userRating h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+#userRating label {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#userRating label::before {
+  content: '\2605'; /* Unicode character for star */
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 24px;
+  color: #ccc; /* Default color for empty star */
+}
+
+#userRating input[type="radio"]:checked + label::before {
+  color: #ffc107; /* Color for filled star */
+}
+
+#userRating button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#userRating button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
