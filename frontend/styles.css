@@ -1111,6 +1111,7 @@ label {
   border-radius: 10px;
   width: 100%;
   resize: vertical;
+  background-color: transparent;
 }
 
 /* Styling for user rating */
