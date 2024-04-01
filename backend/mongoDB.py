@@ -29,7 +29,7 @@ def addReview(llm, rating, review):
 
 # Get a cursor to all reviews in database
 def getAllReviews():
-    cursor = collection.find()
+    cursor = collection.find({"review": {"$ne": None}})    
     reviews = []
     for review in cursor:
         review['_id'] = str(review['_id'])  # Convert ObjectId to string
