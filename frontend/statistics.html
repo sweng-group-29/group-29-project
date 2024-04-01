@@ -43,7 +43,7 @@
     let chart;  // Global variable to hold the chart instance
 
     async function fetchReviews(llm) {
-      const url = 'http://localhost:5000/reviews';
+      const url = 'https://group29.api.sprinty.tech/reviews';
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`HTTP error reviews! status: ${response.status}`);
