@@ -274,7 +274,7 @@ document.getElementById("submitReviewButton").addEventListener("click", function
     };
 
     // Send review data to backend
-    fetch('http://127.0.0.1:5000/reviews', { // Update the URL here
+    fetch('https://group29.api.sprinty.tech/reviews', { // Update the URL here
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
