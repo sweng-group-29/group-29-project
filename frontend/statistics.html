@@ -4,7 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistics</title>
+    <link rel="icon" type="image/x-icon" href="/frontend/assets/images/ci.png">
     <link rel="stylesheet" href="styles.css">
+    <script>
+      onload = async () => {
+
+        fetch('components/sidebar.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error sidebar! status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('sidebar').innerHTML = data;
+
+            // Add the event listener after the sidebar is loaded
+            document.getElementById('nav-toggle').addEventListener('change', function() {
+                if(this.checked) {
+                    document.body.classList.remove('sidebar-open');
+                } else {
+                    document.body.classList.add('sidebar-open');
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+        document.getElementById('llm-select').addEventListener('change', function() {
+            const llm = this.value;
+            fetchReviews(llm);
+        });
+
+        fetchReviews('all');
+      };
+      
+    let chart;  // Global variable to hold the chart instance
+
+    async function fetchReviews(llm) {
+      const url = 'http://localhost:5000/reviews';
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error reviews! status: ${response.status}`);
+      }
+      let reviews = await response.json();
+      if (llm !== 'all') {
+        reviews = reviews.filter(review => review.llm === llm);
+      }
+      const count = reviews.length;
+      const averageRating = reviews.reduce((sum, review) => sum + Number(review.rating), 0) / count;
+      
+      const reviewsDiv = document.getElementById('reviews');
+      reviewsDiv.innerHTML = `
+        <div class="stat-box">
+          <span>Count: ${count}</span>
+        </div>
+        <div class="stat-box">
+          <canvas id="chart"></canvas>
+        </div>
+        <div class="stat-box">
+          <span>Average Rating: ${averageRating.toFixed(2)}</span>
+        </div>
+      `;
+
+      // Count the number of 1-5 ratings
+      const ratingCounts = [0, 0, 0, 0, 0];
+      for (const review of reviews) {
+        const rating = Math.round(Number(review.rating));
+        if (rating >= 1 && rating <= 5) {
+          ratingCounts[rating - 1]++;
+        }
+      }
+
+      // Update the chart
+      const ctx = document.getElementById('chart').getContext('2d');
+      if (chart) {
+        chart.destroy();  // Destroy the previous chart instance if it exists
+      }
+      chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['1', '2', '3', '4', '5'],
+          datasets: [{
+            label: 'Number of Ratings',
+            data: ratingCounts,
+            backgroundColor: ['rgba(255, 0, 0, 0.2)', 'rgba(255, 165, 0, 0.2)', 'rgba(255, 255, 0, 0.2)', 'rgba(144, 238, 144, 0.2)', 'rgba(0, 128, 0, 0.2)'],
+            borderColor: ['rgba(255, 0, 0, 1)', 'rgba(255, 165, 0, 1)', 'rgba(255, 255, 0, 1)', 'rgba(144, 238, 144, 1)', 'rgba(0, 128, 0, 1)'],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+      
+    </script>
 </head>
 <body>
     <!-- Sidebar-->
@@ -19,57 +119,19 @@
         <div class="dropdown">
             <select id="llm-select">
                 <option value="all">All</option>
-                <option value="llm1">LLM 1</option>
-                <option value="llm2">LLM 2</option>
-                <option value="llm3">LLM 3</option>
+                <option value="BART">BART</option>
+                <option value="GPT-3.5">GPT-3.5</option>
+                <option value="GPT 4">GPT 4</option>
+                <option value="Google Pegasus">Google Pegasus</option>
             </select>
         </div>
 
-        <div class="stats-grid">
-            <div id="total-requests"><h3>Total Requests:</h3> <span>14</span></div>
-            <div id="ratings-graph"><h3>Ratings Graph:</h3>
-                <div class="chart">
-                  <div class="part percent-50">
-                    <div class="label">5 Stars</div>
-                    <div class="bar green">aw
-                      <div class="label">50%</div>
-                    </div>
-                  </div>
-                  <div class="part percent-20">
-                    <div class="label">4 Stars</div>
-                    <div class="bar lime">aw
-                      <div class="label">20%</div>
-                    </div>
-                  </div>
-                  <div class="part percent-5">
-                    <div class="label">3 Stars</div>
-                    <div class="bar yellow">aw
-                      <div class="label">5%  </div>
-                    </div>
-                  </div>
-                  <div class="part percent-5">
-                    <div class="label">2 Stars</div>
-                    <div class="bar orange">aw
-                      <div class="label">5%</div>
-                    </div>
-                  </div>
-                  <div class="part percent-20">
-                    <div class="label">1 Star</div>
-                    <div class="bar red">aw
-                      <div class="label">20%</div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <div id="avg-words"><h3>Average Words Summarized:</h3> <span>316</span></div>
-            <div id="avg-summary-length"><h3>Average Summary Length:</h3> <span>102</span></div>
-            <div id="avg-accuracy"><h3>Average Accuracy:</h3> <span>74%</span></div>
-            <div id="avg-response-time"><h3>Average Response Time:</h3> <span>34 sec</span></div>
+        <div class="stats-grid" id="reviews">
+            <!-- Reviews will be added here -->
         </div>
 
         
     </div>
-
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

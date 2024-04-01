@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report Summarization</title>
+    <link rel="icon" type="image/x-icon" href="/frontend/assets/images/ci.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -72,9 +73,15 @@
                 <p id="summarizedText"></p>
             </div>
 
+            <!-- User comment -->
+            <div id="user-comment">
+                <label for="userComment">Write your comment:</label>
+                    <textarea id="userComment" name="userComment" rows="4" cols="50"></textarea>
+            </div>
+
             <!-- User rating -->
             <!-- Will display after text has been summarized -->
-            <form id="userRating" style="display: none;">
+            <form id="userRating">
                 <h3>Rate the LLM's Performance:</h3>
                 <input type="radio" id="1" name="rating" value="1">
                 <label for="1">1</label><br>
@@ -86,7 +93,7 @@
                 <label for="4">4</label><br>
                 <input type="radio" id="5" name="rating" value="5">
                 <label for="5">5</label><br><br>
-                <button type="submit">Submit Rating</button>
+                <button type="submit" id="submitReviewButton">Submit Review</button>
             </form>
 
         </main>
