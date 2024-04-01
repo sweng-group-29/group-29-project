@@ -129,7 +129,7 @@ function handleFileSelect(event) {
 
         const fileImage = document.createElement('img');
         fileImage.className = 'file-image';
-        fileImage.src = 'file.png';
+        fileImage.src = 'assets/images/paper.svg';
         fileImage.alt = 'File Icon';
 
         const fileName = document.createElement('span');
