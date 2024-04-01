@@ -178,7 +178,7 @@ function sum() {
     // Determine which model to use based on the selected option
     let modelEndpoint;
     if (selectedModelValue === 'BART') {
-        modelEndpoint = 'facebook/bart-large-cnn';
+        modelEndpoint = 'facebook/bart-large-xsum';
     } else if (selectedModelValue === 'gpt3') {
         modelEndpoint = 'gpt-3.5-turbo-1106';
     } else if (selectedModelValue === 'googlepeg') {
