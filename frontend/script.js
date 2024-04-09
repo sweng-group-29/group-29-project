@@ -63,7 +63,9 @@ window.onload = function () {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }  
+    
 }
+
 
 // --------------------------------- //
 // LLM-Screen
@@ -107,15 +109,14 @@ document.getElementById('txtFile').addEventListener('change', function() {
 // --------------------------------- //
 
 document.addEventListener('DOMContentLoaded', () => {
+    
     const fileList = document.getElementById('fileList');
     const fileInput = document.getElementById('txtFile');
     fileInput.addEventListener('change',
         handleFileSelect);
 
     const dragDropContainer = document.querySelector('.drag-drop-container');
-
     dragDropContainer.addEventListener('drop', handleDrop);
-
     dragDropContainer.addEventListener('dragover', handleDragover);
 });
 
@@ -129,7 +130,7 @@ function handleFileSelect(event) {
 
         const fileImage = document.createElement('img');
         fileImage.className = 'file-image';
-        fileImage.src = 'file.png';
+        fileImage.src = 'assets/images/paper.svg';
         fileImage.alt = 'File Icon';
 
         const fileName = document.createElement('span');

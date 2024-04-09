@@ -25,7 +25,23 @@
             <input type="file" id="fileInput" class="file-input" onchange="handleFileSelect(event)" multiple
                 style="display: none;" accept=".txt">
 
-            <div id="fileList" class="file-list"></div>
+            <div id="fileList" class="file-list">
+                <div class="file-item" id="div1">
+                    <img src="assets/images/paper.svg" alt="File icon" class="file-image">
+                    <span>CitiBankReport.txt</span>
+                    <span class="delete-button" onclick="document.getElementById('div1').remove()">x</span>
+                </div>
+                <div class="file-item" id="div2">
+                    <img src="assets/images/paper.svg" alt="File icon" class="file-image">
+                    <span>CitiBankReport2.txt</span>
+                    <span class="delete-button" onclick="document.getElementById('div2').remove()">x</span>
+                </div>
+                <div class="file-item" id="div3">
+                    <img src="assets/images/paper.svg" alt="File icon" class="file-image">
+                    <span>example.txt</span>
+                    <span class="delete-button" onclick="document.getElementById('div3').remove()">x</span>
+                </div>
+            </div>
 
             <label for="fileInput" class="drag-drop-container" ondrop="handleDrop(event)"
                 ondragover="handleDragOver(event)">
